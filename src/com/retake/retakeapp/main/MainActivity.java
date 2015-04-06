@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +18,7 @@ import com.example.retakeapp.R;
 import com.retake.retakeapp.base.BaseFragment;
 import com.retake.retakeapp.map.FragmentMap;
 import com.retake.retakeapp.schedule.ScheduleFragment;
+import com.retake.retakeapp.streaming.StreamingFragment;
 
 @SuppressWarnings("deprecation")
 public class MainActivity extends FragmentActivity {
@@ -38,6 +38,9 @@ public class MainActivity extends FragmentActivity {
 
 	private ArrayList<NavDrawerItem> navDrawerItems;
 	private NavDrawerListAdapter adapter;
+	private ScheduleFragment fragmentSchedule;
+	private FragmentMap fragmentMap;
+	private StreamingFragment fragmentStreaming;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,14 +73,15 @@ public class MainActivity extends FragmentActivity {
 				.getResourceId(2, -1)));
 		// Communities, Will add a counter here
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons
-				.getResourceId(3, -1), true, "22"));
+				.getResourceId(3, -1)));
 		// Pages
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons
 				.getResourceId(4, -1)));
 		// What's hot, We will add a counter here
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons
-				.getResourceId(5, -1), true, "50+"));
-
+				.getResourceId(5, -1)));
+		navDrawerItems.add(new NavDrawerItem(navMenuTitles[6], navMenuIcons
+				.getResourceId(6, -1)));
 		// Recycle the typed array
 		navMenuIcons.recycle();
 
@@ -170,11 +174,13 @@ public class MainActivity extends FragmentActivity {
 	private void displayView(int position) {
 		// update the main content by replacing fragments
 		BaseFragment fragment = null;
+		boolean fragmentSchedule = false;
 		switch (position) {
 		case 0:
 			break;
 		case 1:
 			fragment = new FragmentMap();
+			launchMap(1);
 			break;
 		case 2:
 			fragment = new AchievementsFragment();
@@ -184,25 +190,15 @@ public class MainActivity extends FragmentActivity {
 			break;
 		case 4:
 			fragment = new ScheduleFragment();
+			launchSchedule(4);
 			break;
 		case 5:
 			fragment = new TournamentsFragment();
 			break;
-		}
-	
-		if (fragment != null) {
-			android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-			fragmentManager.beginTransaction()
-					.replace(R.id.frame_container, fragment).commit();
-
-			// update selected item and title, then close the drawer
-			mDrawerList.setItemChecked(position, true);
-			mDrawerList.setSelection(position);
-			setTitle(navMenuTitles[position]);
-			mDrawerLayout.closeDrawer(mDrawerList);
-		} else {
-			// error in creating fragment
-			Log.e("MainActivity", "Error in creating fragment");
+		case 6:
+			fragment = new StreamingFragment();
+			launchStreaming(6);
+			break;
 		}
 	}
 
@@ -231,4 +227,97 @@ public class MainActivity extends FragmentActivity {
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
 
+	public void launchSchedule(int position) {
+		if (fragmentSchedule == null) {
+			fragmentSchedule = new ScheduleFragment();
+		}
+
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		android.support.v4.app.Fragment currentFrag = getSupportFragmentManager()
+				.findFragmentById(R.id.frame_container);
+		mDrawerList.setItemChecked(position, true);
+		mDrawerList.setSelection(position);
+		setTitle(navMenuTitles[position]);
+		mDrawerLayout.closeDrawer(mDrawerList);
+		if (currentFrag != fragmentSchedule) {
+
+			if (currentFrag != null) {
+				transaction.remove(currentFrag);
+			}
+
+			if (!fragmentSchedule.isAdded()) {
+				transaction.add(R.id.frame_container, fragmentSchedule);
+			} else {
+				transaction.show(fragmentSchedule);
+			}
+
+			transaction.addToBackStack(null);
+			transaction.commit();
+
+		}
+	}
+
+	public void launchMap(int position) {
+		if (fragmentMap == null) {
+			fragmentMap = new FragmentMap();
+		}
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		android.support.v4.app.Fragment currentFrag = getSupportFragmentManager()
+				.findFragmentById(R.id.frame_container);
+		mDrawerList.setItemChecked(position, true);
+		mDrawerList.setSelection(position);
+		setTitle(navMenuTitles[position]);
+		mDrawerLayout.closeDrawer(mDrawerList);
+		if (currentFrag != fragmentMap) {
+
+			if (currentFrag != null) {
+				transaction.remove(currentFrag);
+			}
+
+			if (!fragmentMap.isAdded()) {
+				transaction.add(R.id.frame_container, fragmentMap);
+			} else {
+				transaction.show(fragmentMap);
+			}
+
+			transaction.addToBackStack(null);
+			transaction.commit();
+
+		}
+	}
+
+	public void launchStreaming(int position) {
+		if (fragmentStreaming == null) {
+			fragmentStreaming = new StreamingFragment();
+		}
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		android.support.v4.app.Fragment currentFrag = getSupportFragmentManager()
+				.findFragmentById(R.id.frame_container);
+		mDrawerList.setItemChecked(position, true);
+		mDrawerList.setSelection(position);
+		setTitle(navMenuTitles[position]);
+		mDrawerLayout.closeDrawer(mDrawerList);
+		if (currentFrag != fragmentStreaming) {
+
+			if (currentFrag != null) {
+				transaction.remove(currentFrag);
+			}
+
+			if (!fragmentStreaming.isAdded()) {
+				transaction.add(R.id.frame_container, fragmentStreaming);
+			} else {
+				transaction.show(fragmentStreaming);
+			}
+
+			transaction.addToBackStack(null);
+			transaction.commit();
+
+		}
+	}
 }

@@ -5,13 +5,15 @@ public class ScheduleModel {
 	private String start;
 	private String end;
 	private String name;
+	private String location;
 
-	public ScheduleModel(String day, String start, String end, String name) {
+	public ScheduleModel(String day, String start, String end, String name,String location) {
 		super();
 		this.day = day;
 		this.start = start;
 		this.end = end;
 		this.name = name;
+		this.location = location;
 	}
 
 	public String getDay() {
@@ -46,4 +48,13 @@ public class ScheduleModel {
 		this.name = name;
 	}
 
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	
 }

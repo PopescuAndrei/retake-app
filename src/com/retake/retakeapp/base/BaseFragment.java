@@ -69,10 +69,6 @@ public abstract class BaseFragment extends Fragment implements BaseApiListener {
 		super.onStart();
 	}
 
-	public abstract void initUI(View view);
-
-	protected abstract void onAfterStart();
-
 	/**
 	 * displays toast message<br/>
 	 * <br/>
@@ -103,4 +99,7 @@ public abstract class BaseFragment extends Fragment implements BaseApiListener {
 		showDialogBox(getString(R.string.api_get_content_fail_no_internet));
 	}
 
+	public abstract void initUI(View view);
+
+	protected abstract void onAfterStart();
 }
