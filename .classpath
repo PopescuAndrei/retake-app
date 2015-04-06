@@ -7,5 +7,9 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry exported="true" kind="lib" path="/OnyxBeaconLibrary-2.1.2"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Andrei/Desktop/SDK 2.1.2/Examples/Eclipse/OnyxBeaconLibrary-2.1.2/libs/onyxbeaconlibrary2.1.2-r2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Andrei/Desktop/SDK 2.1.2/Examples/Eclipse/OnyxBeaconLibrary-2.1.2/libs/IBeaconClient.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Andrei/Desktop/SDK 2.1.2/Examples/Eclipse/OnyxBeaconLibrary-2.1.2/libs/gson-2.3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Andrei/Desktop/SDK 2.1.2/Examples/Eclipse/OnyxBeaconLibrary-2.1.2/libs/library-1.0.11.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

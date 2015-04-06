@@ -78,10 +78,13 @@ public class FragmentMap extends BaseFragment implements
 
 		MarkerOptions EntryMarker = new MarkerOptions()
 				.position(polivalentaEntry).title("Dreamhack entrance")
-				.visible(true);
+				.visible(true)
+				.icon(BitmapDescriptorFactory.fromResource(R.drawable.pins));
 		MarkerOptions RetakeMarker = new MarkerOptions()
 				.position(new LatLng(44.405249, 26.109954)).title("Retake")
-				.snippet("We are ready to take over the world!").visible(true);
+				.snippet("We are ready to take over the world!")
+				.visible(true)
+				.icon(BitmapDescriptorFactory.fromResource(R.drawable.pins));
 		BigMarkerOptions = new MarkerOptions()
 				.position(polivalentaEntry)
 				.title("Retake")
@@ -91,7 +94,7 @@ public class FragmentMap extends BaseFragment implements
 
 		mMap.addMarker(EntryMarker);
 		mMap.addMarker(RetakeMarker);
-		if (position.zoom <= 17f) {
+		if (position.zoom <= 17f && BigMarker == null) {
 			BigMarker = mMap.addMarker(BigMarkerOptions);
 		} else {
 			if (BigMarker != null)
@@ -111,7 +114,7 @@ public class FragmentMap extends BaseFragment implements
 		});
 
 		mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-
+		mMap.getUiSettings().setMapToolbarEnabled(false);
 		mMap.setBuildingsEnabled(false);
 		mMap.setIndoorEnabled(true);
 		LatLng polivalentaEntry = new LatLng(44.405180, 26.110692);

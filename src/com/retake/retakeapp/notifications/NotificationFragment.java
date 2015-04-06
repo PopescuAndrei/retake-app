@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,9 +13,11 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.retakeapp.R;
+
 import com.retake.retakeapp.base.BaseFragment;
 import com.retake.retakeapp.base.BaseModel;
 import com.retake.retakeapp.base.ModelFailureResponse;
+
 import com.retake.retakeapp.streaming.ApiStreaming;
 
 public class NotificationFragment extends BaseFragment {
@@ -24,6 +27,7 @@ public class NotificationFragment extends BaseFragment {
 	private AdapterNotifications adapter;
 	private List<NotificationModel> temporary;
 	private Context context;
+
 
 	public NotificationFragment() {
 
@@ -67,7 +71,7 @@ public class NotificationFragment extends BaseFragment {
 		temporary = new ArrayList<NotificationModel>();
 		NotificationModel model = new NotificationModel(
 				"Title",
-				"Lorem impsum dolores bla bla lorem impsum dolores bla blaLorem impsum dolores bla bla lorem impsum dolores bla bla");
+				"Lorem impsum dolores bla bla lorem impsum dolores um dolores ");
 		temporary.add(model);
 		temporary.add(model);
 		temporary.add(model);
