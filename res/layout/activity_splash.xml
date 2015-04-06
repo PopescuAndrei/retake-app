@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#234d5f"
+            android:scaleType="fitXY"
             android:contentDescription="@string/desc_list_item_icon"
             android:src="@drawable/splashtemp" />
     </RelativeLayout>
