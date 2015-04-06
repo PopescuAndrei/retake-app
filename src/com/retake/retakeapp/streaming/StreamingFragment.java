@@ -3,6 +3,8 @@ package com.retake.retakeapp.streaming;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -67,12 +69,22 @@ public class StreamingFragment extends BaseFragment {
 	public void initUI(View view) {
 		lvStreaming = (ListView) getActivity().findViewById(R.id.lvStreaming);
 		temporary = new ArrayList<StreamingModel>();
-		StreamingModel model = new StreamingModel("LOL Streaming",
-				Uri.parse("http://www.twitch.tv/voyboy/mobile/"));
+		StreamingModel model = new StreamingModel("PGL Streaming",
+				Uri.parse("http://www.twitch.tv/pgl/mobile"));
+		StreamingModel mode2 = new StreamingModel("imaqtpie Streaming",
+				Uri.parse("http://www.twitch.tv/imaqtpie/mobile"));
+		StreamingModel mode3 = new StreamingModel("Redbullsports Streaming",
+				Uri.parse("http://www.twitch.tv/redbullesports/mobile/"));
+		StreamingModel mode4 = new StreamingModel("starladder1 Streaming",
+				Uri.parse("http://www.twitch.tv/starladder1/mobile/"));
 		temporary.add(model);
-		temporary.add(model);
-		temporary.add(model);
-		temporary.add(model);
+		temporary.add(mode2);
+		temporary.add(mode3);
+		temporary.add(mode4);
+		temporary.add(mode4);
+		temporary.add(mode4);
+		temporary.add(mode4);
+		temporary.add(mode4);
 		adapter = new AdapterStreaming(getActivity().getApplicationContext(),
 				temporary);
 		lvStreaming.setAdapter(adapter);
@@ -104,5 +116,6 @@ public class StreamingFragment extends BaseFragment {
 		super.onActivityCreated(savedInstanceState);
 		context = getActivity().getApplicationContext();
 	}
+	
 
 }

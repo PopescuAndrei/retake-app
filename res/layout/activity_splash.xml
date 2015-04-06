@@ -12,15 +12,16 @@
 
     <RelativeLayout
         android:id="@+id/loaded_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true" >
 
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="#234d5f"
+            android:src="@drawable/splashtemp" 
             android:contentDescription="@string/desc_list_item_icon" />
     </RelativeLayout>
 

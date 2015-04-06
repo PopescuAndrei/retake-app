@@ -1,11 +1,6 @@
 package com.retake.retakeapp.map;
 
-import java.util.List;
-
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,8 +13,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.GroundOverlayOptions;
@@ -34,6 +29,8 @@ public class FragmentMap extends BaseFragment implements
 		GoogleApiClient.OnConnectionFailedListener {
 	private GoogleMap mMap; // Might be null if Google Play services APK is not
 	private Button buttonTakeOnEvent;
+	Marker BigMarker;
+	MarkerOptions BigMarkerOptions;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,10 +72,45 @@ public class FragmentMap extends BaseFragment implements
 		}
 	}
 
+	private void setUpMarkers(CameraPosition position) {
+		LatLng polivalentaMid = new LatLng(44.405383, 26.110211);
+		LatLng polivalentaEntry = new LatLng(44.405180, 26.110692);
+
+		MarkerOptions EntryMarker = new MarkerOptions()
+				.position(polivalentaEntry).title("Dreamhack entrance")
+				.visible(true);
+		MarkerOptions RetakeMarker = new MarkerOptions()
+				.position(new LatLng(44.405249, 26.109954)).title("Retake")
+				.snippet("We are ready to take over the world!").visible(true);
+		BigMarkerOptions = new MarkerOptions()
+				.position(polivalentaEntry)
+				.title("Retake")
+				.snippet("We are ready to take over the world!")
+				.icon(BitmapDescriptorFactory
+						.fromResource(R.drawable.dreamhackopen));
+
+		mMap.addMarker(EntryMarker);
+		mMap.addMarker(RetakeMarker);
+		if (position.zoom <= 17f) {
+			BigMarker = mMap.addMarker(BigMarkerOptions);
+		} else {
+			if (BigMarker != null)
+				BigMarker.remove();
+		}
+	}
+
 	private void setUpMap() {
+
+		mMap.setOnCameraChangeListener(new OnCameraChangeListener() {
+
+			@Override
+			public void onCameraChange(CameraPosition position) {
+				setUpMarkers(position);
+			}
+
+		});
+
 		mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-		// mMap.addTileOverlay(new TileOverlayOptions()
-		// .tileProvider(new CustomTileProvider(getResources().getAssets())));
 
 		mMap.setBuildingsEnabled(false);
 		mMap.setIndoorEnabled(true);
@@ -95,20 +127,14 @@ public class FragmentMap extends BaseFragment implements
 		CameraUpdate upd = CameraUpdateFactory.newLatLngZoom(polivalentaEntry,
 				15);
 		mMap.moveCamera(upd);
-
-		mMap.addMarker(new MarkerOptions().position(polivalentaEntry).title(
-				"Dreamhack entrance"));
-		mMap.addMarker(new MarkerOptions()
-				.position(new LatLng(44.405249, 26.109954)).title("Retake")
-				.snippet("We are ready to take over the world!"));
-
+		// setUpMarkers();
 		mMap.setMyLocationEnabled(true);
-
+		mMap.setPadding(0, 0, 0, 10);
 	}
 
 	@Override
 	public void onResume() {
-		mMap = null;
+		// mMap = null;
 		super.onResume();
 		setUpMapIfNeeded();
 	}
@@ -150,7 +176,7 @@ public class FragmentMap extends BaseFragment implements
 	public void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
-		mMap = null;
+		// mMap = null;
 	}
 
 	@Override
