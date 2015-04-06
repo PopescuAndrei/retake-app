@@ -1,12 +1,17 @@
 package com.retake.retakeapp.map;
 
-import android.graphics.Canvas;
+import java.util.List;
+
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+
 import com.example.retakeapp.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -14,13 +19,13 @@ import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.retake.retakeapp.base.BaseFragment;
 import com.retake.retakeapp.base.BaseModel;
 
@@ -28,7 +33,7 @@ public class FragmentMap extends BaseFragment implements
 		GoogleApiClient.ConnectionCallbacks,
 		GoogleApiClient.OnConnectionFailedListener {
 	private GoogleMap mMap; // Might be null if Google Play services APK is not
-	Button buttonTakeOnEvent;
+	private Button buttonTakeOnEvent;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,6 +57,7 @@ public class FragmentMap extends BaseFragment implements
 
 			}
 		});
+
 		setUpMapIfNeeded();
 	}
 
@@ -71,30 +77,30 @@ public class FragmentMap extends BaseFragment implements
 
 	private void setUpMap() {
 		mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-//		mMap.addTileOverlay(new TileOverlayOptions()
-//				.tileProvider(new CustomTileProvider(getResources().getAssets())));
-		
+		// mMap.addTileOverlay(new TileOverlayOptions()
+		// .tileProvider(new CustomTileProvider(getResources().getAssets())));
+
 		mMap.setBuildingsEnabled(false);
 		mMap.setIndoorEnabled(true);
 		LatLng polivalentaEntry = new LatLng(44.405180, 26.110692);
 		LatLng polivalentaMid = new LatLng(44.405383, 26.110211);
-		
+
 		GroundOverlayOptions polivalentaMap = new GroundOverlayOptions()
-        .image(BitmapDescriptorFactory.fromResource(R.drawable.floorplan))
-        .position(polivalentaMid, 90f)
-        .bearing(304);
-		
+				.image(BitmapDescriptorFactory
+						.fromResource(R.drawable.floorplan))
+				.position(polivalentaMid, 90f).bearing(304);
+
 		mMap.addGroundOverlay(polivalentaMap);
-		
-		CameraUpdate upd = CameraUpdateFactory.newLatLngZoom(polivalentaEntry, 15);
+
+		CameraUpdate upd = CameraUpdateFactory.newLatLngZoom(polivalentaEntry,
+				15);
 		mMap.moveCamera(upd);
 
 		mMap.addMarker(new MarkerOptions().position(polivalentaEntry).title(
 				"Dreamhack entrance"));
 		mMap.addMarker(new MarkerOptions()
-        .position(new LatLng(44.405249, 26.109954))
-        .title("Retake")
-        .snippet("We are ready to take over the world!"));
+				.position(new LatLng(44.405249, 26.109954)).title("Retake")
+				.snippet("We are ready to take over the world!"));
 
 		mMap.setMyLocationEnabled(true);
 
@@ -111,8 +117,9 @@ public class FragmentMap extends BaseFragment implements
 		LatLng polivalentaEntry = new LatLng(44.405180, 26.110692);
 
 		CameraPosition cameraPosition = new CameraPosition.Builder()
-				.target(polivalentaEntry) // Sets the center of the map to Mountain
-										// View
+				.target(polivalentaEntry) // Sets the center of the map to
+											// Mountain
+											// View
 				.zoom(22) // Sets the zoom
 				.bearing(304) // Sets the orientation of the camera to east
 				.tilt(0) // Sets the tilt of the camera to 30 degrees
@@ -163,5 +170,4 @@ public class FragmentMap extends BaseFragment implements
 		// TODO Auto-generated method stub
 
 	}
-
 }

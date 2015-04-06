@@ -503,7 +503,7 @@ containing a value of this type.
         public static final int sporti=0x7f02002f;
     }
     public static final class id {
-        public static final int action_settings=0x7f0c002d;
+        public static final int action_settings=0x7f0c0030;
         public static final int adjust_height=0x7f0c0000;
         public static final int adjust_width=0x7f0c0001;
         public static final int book_now=0x7f0c0010;
@@ -525,8 +525,9 @@ containing a value of this type.
         public static final int list_slidermenu=0x7f0c001a;
         public static final int loaded_content=0x7f0c001b;
         public static final int loading=0x7f0c001d;
-        public static final int lvSchedule=0x7f0c0025;
-        public static final int lvStreaming=0x7f0c0026;
+        public static final int lvNotification=0x7f0c0025;
+        public static final int lvSchedule=0x7f0c0026;
+        public static final int lvStreaming=0x7f0c0027;
         public static final int map=0x7f0c0023;
         public static final int map_container=0x7f0c0022;
         public static final int match_parent=0x7f0c000e;
@@ -541,12 +542,14 @@ containing a value of this type.
         public static final int strict_sandbox=0x7f0c000b;
         public static final int terrain=0x7f0c0006;
         public static final int title=0x7f0c001f;
-        public static final int tvEventLocation=0x7f0c002b;
-        public static final int tvEventName=0x7f0c002a;
-        public static final int tvFrom=0x7f0c0027;
-        public static final int tvMinus=0x7f0c0028;
-        public static final int tvStreamingLink=0x7f0c002c;
-        public static final int tvTo=0x7f0c0029;
+        public static final int tvEventLocation=0x7f0c002e;
+        public static final int tvEventName=0x7f0c002d;
+        public static final int tvFrom=0x7f0c002a;
+        public static final int tvMinus=0x7f0c002b;
+        public static final int tvNotificationMessage=0x7f0c0029;
+        public static final int tvNotificationTitle=0x7f0c0028;
+        public static final int tvStreamingLink=0x7f0c002f;
+        public static final int tvTo=0x7f0c002c;
         public static final int txtLabel=0x7f0c0021;
         public static final int wrap_content=0x7f0c000f;
     }
@@ -565,8 +568,9 @@ containing a value of this type.
         public static final int fragment_schedule=0x7f030008;
         public static final int fragment_streaming=0x7f030009;
         public static final int fragment_tournaments=0x7f03000a;
-        public static final int schedule_item=0x7f03000b;
-        public static final int streaming_item=0x7f03000c;
+        public static final int notification_item=0x7f03000b;
+        public static final int schedule_item=0x7f03000c;
+        public static final int streaming_item=0x7f03000d;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;

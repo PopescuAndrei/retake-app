@@ -17,6 +17,7 @@ import android.widget.ListView;
 import com.example.retakeapp.R;
 import com.retake.retakeapp.base.BaseFragment;
 import com.retake.retakeapp.map.FragmentMap;
+import com.retake.retakeapp.notifications.NotificationFragment;
 import com.retake.retakeapp.schedule.ScheduleFragment;
 import com.retake.retakeapp.streaming.StreamingFragment;
 
@@ -41,6 +42,9 @@ public class MainActivity extends FragmentActivity {
 	private ScheduleFragment fragmentSchedule;
 	private FragmentMap fragmentMap;
 	private StreamingFragment fragmentStreaming;
+	private NotificationFragment fragmentNotification;
+	private AchievementsFragment fragmentAchievements;
+	private TournamentsFragment fragmentTournaments;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -173,31 +177,25 @@ public class MainActivity extends FragmentActivity {
 	 * Diplaying fragment view for selected nav drawer list item
 	 * */
 	private void displayView(int position) {
-		// update the main content by replacing fragments
-		BaseFragment fragment = null;
-		boolean fragmentSchedule = false;
 		switch (position) {
 		case 0:
 			break;
 		case 1:
-			fragment = new FragmentMap();
 			launchMap(1);
 			break;
 		case 2:
-			fragment = new AchievementsFragment();
+			launchAchievements(2);
 			break;
 		case 3:
-			fragment = new NotificationFragment();
+			launchNotification(3);
 			break;
 		case 4:
-			fragment = new ScheduleFragment();
 			launchSchedule(4);
 			break;
 		case 5:
-			fragment = new TournamentsFragment();
+			launchTournaments(5);
 			break;
 		case 6:
-			fragment = new StreamingFragment();
 			launchStreaming(6);
 			break;
 		}
@@ -314,6 +312,99 @@ public class MainActivity extends FragmentActivity {
 				transaction.add(R.id.frame_container, fragmentStreaming);
 			} else {
 				transaction.show(fragmentStreaming);
+			}
+
+			transaction.addToBackStack(null);
+			transaction.commit();
+
+		}
+	}
+
+	public void launchNotification(int position) {
+		if (fragmentNotification == null) {
+			fragmentNotification = new NotificationFragment();
+		}
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		android.support.v4.app.Fragment currentFrag = getSupportFragmentManager()
+				.findFragmentById(R.id.frame_container);
+		mDrawerList.setItemChecked(position, true);
+		mDrawerList.setSelection(position);
+		setTitle(navMenuTitles[position]);
+		mDrawerLayout.closeDrawer(mDrawerList);
+		if (currentFrag != fragmentNotification) {
+
+			if (currentFrag != null) {
+				transaction.remove(currentFrag);
+			}
+
+			if (!fragmentNotification.isAdded()) {
+				transaction.add(R.id.frame_container, fragmentNotification);
+			} else {
+				transaction.show(fragmentNotification);
+			}
+
+			transaction.addToBackStack(null);
+			transaction.commit();
+
+		}
+	}
+
+	public void launchAchievements(int position) {
+		if (fragmentAchievements == null) {
+			fragmentAchievements = new AchievementsFragment();
+		}
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		android.support.v4.app.Fragment currentFrag = getSupportFragmentManager()
+				.findFragmentById(R.id.frame_container);
+		mDrawerList.setItemChecked(position, true);
+		mDrawerList.setSelection(position);
+		setTitle(navMenuTitles[position]);
+		mDrawerLayout.closeDrawer(mDrawerList);
+		if (currentFrag != fragmentAchievements) {
+
+			if (currentFrag != null) {
+				transaction.remove(currentFrag);
+			}
+
+			if (!fragmentAchievements.isAdded()) {
+				transaction.add(R.id.frame_container, fragmentAchievements);
+			} else {
+				transaction.show(fragmentAchievements);
+			}
+
+			transaction.addToBackStack(null);
+			transaction.commit();
+
+		}
+	}
+
+	public void launchTournaments(int position) {
+		if (fragmentTournaments == null) {
+			fragmentTournaments = new TournamentsFragment();
+		}
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		android.support.v4.app.Fragment currentFrag = getSupportFragmentManager()
+				.findFragmentById(R.id.frame_container);
+		mDrawerList.setItemChecked(position, true);
+		mDrawerList.setSelection(position);
+		setTitle(navMenuTitles[position]);
+		mDrawerLayout.closeDrawer(mDrawerList);
+		if (currentFrag != fragmentTournaments) {
+
+			if (currentFrag != null) {
+				transaction.remove(currentFrag);
+			}
+
+			if (!fragmentTournaments.isAdded()) {
+				transaction.add(R.id.frame_container, fragmentTournaments);
+			} else {
+				transaction.show(fragmentTournaments);
 			}
 
 			transaction.addToBackStack(null);
