@@ -1,5 +1,6 @@
 package com.retake.retakeapp.map;
 
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +14,11 @@ import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.retake.retakeapp.base.BaseFragment;
@@ -67,16 +71,31 @@ public class FragmentMap extends BaseFragment implements
 
 	private void setUpMap() {
 		mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-		mMap.addTileOverlay(new TileOverlayOptions()
-				.tileProvider(new CustomTileProvider(getResources().getAssets())));
-		LatLng Polivalenta = new LatLng(44.4053045, 26.1100732);
-		CameraUpdate upd = CameraUpdateFactory.newLatLngZoom(Polivalenta, 15);
+//		mMap.addTileOverlay(new TileOverlayOptions()
+//				.tileProvider(new CustomTileProvider(getResources().getAssets())));
+		
+		mMap.setBuildingsEnabled(false);
+		mMap.setIndoorEnabled(true);
+		LatLng polivalentaEntry = new LatLng(44.405180, 26.110692);
+		LatLng polivalentaMid = new LatLng(44.405383, 26.110211);
+		
+		GroundOverlayOptions polivalentaMap = new GroundOverlayOptions()
+        .image(BitmapDescriptorFactory.fromResource(R.drawable.floorplan))
+        .position(polivalentaMid, 90f)
+        .bearing(304);
+		
+		mMap.addGroundOverlay(polivalentaMap);
+		
+		CameraUpdate upd = CameraUpdateFactory.newLatLngZoom(polivalentaEntry, 15);
 		mMap.moveCamera(upd);
 
-		mMap.addMarker(new MarkerOptions().position(Polivalenta).title(
-				"DreamHack Bucharest"));
+		mMap.addMarker(new MarkerOptions().position(polivalentaEntry).title(
+				"Dreamhack entrance"));
+		mMap.addMarker(new MarkerOptions()
+        .position(new LatLng(44.405249, 26.109954))
+        .title("Retake")
+        .snippet("We are ready to take over the world!"));
 
-		mMap.setIndoorEnabled(true);
 		mMap.setMyLocationEnabled(true);
 
 	}
@@ -89,10 +108,10 @@ public class FragmentMap extends BaseFragment implements
 	}
 
 	public void zoomOnEvent() {
-		LatLng Polivalenta = new LatLng(44.4053045, 26.1100732);
+		LatLng polivalentaEntry = new LatLng(44.405180, 26.110692);
 
 		CameraPosition cameraPosition = new CameraPosition.Builder()
-				.target(Polivalenta) // Sets the center of the map to Mountain
+				.target(polivalentaEntry) // Sets the center of the map to Mountain
 										// View
 				.zoom(22) // Sets the zoom
 				.bearing(304) // Sets the orientation of the camera to east
