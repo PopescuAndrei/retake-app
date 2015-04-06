@@ -53,7 +53,7 @@ public class FragmentMap extends BaseFragment implements
 				zoomOnEvent();
 
 			}
-		});
+		});               
 
 		setUpMapIfNeeded();
 	}
@@ -83,8 +83,8 @@ public class FragmentMap extends BaseFragment implements
 				.position(new LatLng(44.405249, 26.109954)).title("Retake")
 				.snippet("We are ready to take over the world!").visible(true);
 		BigMarkerOptions = new MarkerOptions()
-				.position(polivalentaEntry)
-				.title("Retake")
+				.position(polivalentaEntry)      
+				.title("Retake")              
 				.snippet("We are ready to take over the world!")
 				.icon(BitmapDescriptorFactory
 						.fromResource(R.drawable.dreamhackopen));

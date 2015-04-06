@@ -1,16 +1,64 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.retake.retakeapp.schedule.ScheduleDetails" >
+    android:orientation="vertical"
+    tools:context="com.retake.retakeapp.schedule.ScheduleDetailsFragment" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/retake"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tvEventNameDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Event Title"
+            android:textColor="@android:color/white"
+            android:textSize="32sp" >
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/retakeCyan"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvEventTimeDetails"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="12:00 - 14:00"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvRoomDetails"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Sala B"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" >
+        </TextView>
+    </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:id="@+id/tvDescriptionDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="A început cursa pentru inscrierile in cadrul celei de-a opta editii a competitiei internationale care urmareste sa descopere tinere talente in comunicarea stiintei!
+Daca aveti intre 18 si 35 de ani si studiati sau predati la Universitatea Politehnica Bucuresti va asteptam cu o prezentare de 3 minute din domeniile stiintei, tehnologiei, matematicii sau ingineriei la selectia regionala care va avea loc in ziua de 7 aprilie in cadrul festivalului POLIFEST.
+Castigatorul finalei nationale va reprezenta Romania la finala FameLab International care se va desfasura in cadrul Festivalulului de Stiinta de la Cheltenham in luna iunie. " />
 
-</RelativeLayout>
+</LinearLayout>

@@ -6,14 +6,16 @@ public class ScheduleModel {
 	private String end;
 	private String name;
 	private String location;
+	private String description;
 
-	public ScheduleModel(String day, String start, String end, String name,String location) {
+	public ScheduleModel(String day, String start, String end, String name,String location,String description) {
 		super();
 		this.day = day;
 		this.start = start;
 		this.end = end;
 		this.name = name;
 		this.location = location;
+		this.description = description;
 	}
 
 	public String getDay() {
@@ -54,6 +56,14 @@ public class ScheduleModel {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	

@@ -59,8 +59,13 @@ public class ScheduleFragment extends BaseFragment {
 		lvSchedule = (ListView) getActivity().findViewById(R.id.lvSchedule);
 		Log.e("chioruuuuuuuuuuuule", "ajunge in init");
 		temporary = new ArrayList<ScheduleModel>();
-		ScheduleModel model = new ScheduleModel("monday", "12:00 ", " 14:00",
-				"CS GO Tournament", "Sala B");
+		ScheduleModel model = new ScheduleModel(
+				"monday",
+				"12:00 ",
+				" 14:00",
+				"CS GO Tournament",
+				"Sala B",
+				"evenimentul bla bla blaevenimentul bla bla blaevenimentul bla bla blaevenimentul bla bla blaevenimentul bla bla blaevenimentul bla bla blaevenimentul bla bla blaevenimentul bla bla blaevenimentul bla bla blaevenimentul bla bla blaevenimentul bla bla blaevenimentul bla bla blaevenimentul bla bla blaevenimentul bla bla bla");
 		temporary.add(model);
 		temporary.add(model);
 		temporary.add(model);
@@ -79,10 +84,11 @@ public class ScheduleFragment extends BaseFragment {
 				ScheduleModel schedule = (ScheduleModel) parent
 						.getItemAtPosition(position);
 				Intent intent = new Intent(getActivity(), ScheduleDetails.class);
-				intent.putExtra("name", schedule.getName());
-				intent.putExtra("location", schedule.getLocation());
+				intent.putExtra("title", schedule.getName());
+				intent.putExtra("room", schedule.getLocation());
 				intent.putExtra("start", schedule.getStart());
 				intent.putExtra("end", schedule.getEnd());
+				intent.putExtra("description", schedule.getDescription());
 				startActivity(intent);
 			}
 		});

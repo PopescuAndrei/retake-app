@@ -15,7 +15,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.retakeapp.R;
-import com.retake.retakeapp.base.BaseFragment;
 import com.retake.retakeapp.map.FragmentMap;
 import com.retake.retakeapp.notifications.NotificationFragment;
 import com.retake.retakeapp.schedule.ScheduleFragment;
@@ -45,6 +44,7 @@ public class MainActivity extends FragmentActivity {
 	private NotificationFragment fragmentNotification;
 	private AchievementsFragment fragmentAchievements;
 	private TournamentsFragment fragmentTournaments;
+	private HomeFragment fragmentHome;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -144,6 +144,7 @@ public class MainActivity extends FragmentActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		this.invalidateOptionsMenu();
+		menu.findItem(R.id.action_settings).setVisible(false);
 		return true;
 	}
 
@@ -179,6 +180,7 @@ public class MainActivity extends FragmentActivity {
 	private void displayView(int position) {
 		switch (position) {
 		case 0:
+			launchHome(0);
 			break;
 		case 1:
 			launchMap(1);
@@ -405,6 +407,37 @@ public class MainActivity extends FragmentActivity {
 				transaction.add(R.id.frame_container, fragmentTournaments);
 			} else {
 				transaction.show(fragmentTournaments);
+			}
+
+			transaction.addToBackStack(null);
+			transaction.commit();
+
+		}
+	}
+	
+	public void launchHome(int position) {
+		if (fragmentHome == null) {
+			fragmentHome = new HomeFragment();
+		}
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		android.support.v4.app.Fragment currentFrag = getSupportFragmentManager()
+				.findFragmentById(R.id.frame_container);
+		mDrawerList.setItemChecked(position, true);
+		mDrawerList.setSelection(position);
+		setTitle(navMenuTitles[position]);
+		mDrawerLayout.closeDrawer(mDrawerList);
+		if (currentFrag != fragmentHome) {
+
+			if (currentFrag != null) {
+				transaction.remove(currentFrag);
+			}
+
+			if (!fragmentHome.isAdded()) {
+				transaction.add(R.id.frame_container, fragmentHome);
+			} else {
+				transaction.show(fragmentHome);
 			}
 
 			transaction.addToBackStack(null);
