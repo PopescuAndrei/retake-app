@@ -539,41 +539,43 @@ containing a value of this type.
         public static final int list_item_bg_pressed=0x7f020031;
         public static final int list_selector=0x7f020032;
         public static final int mapbutton=0x7f020033;
-        public static final int pins=0x7f020034;
-        public static final int powered_by_google_dark=0x7f020035;
-        public static final int powered_by_google_light=0x7f020036;
-        public static final int splashtemp=0x7f020037;
-        public static final int sporti=0x7f020038;
+        public static final int phototeam=0x7f020034;
+        public static final int pins=0x7f020035;
+        public static final int powered_by_google_dark=0x7f020036;
+        public static final int powered_by_google_light=0x7f020037;
+        public static final int splashtemp=0x7f020038;
+        public static final int sporti=0x7f020039;
     }
     public static final class id {
-        public static final int action_settings=0x7f0d0048;
+        public static final int action_settings=0x7f0d0051;
         public static final int adjust_height=0x7f0d0000;
         public static final int adjust_width=0x7f0d0001;
-        public static final int area1=0x7f0d0043;
-        public static final int area2=0x7f0d0044;
-        public static final int area3=0x7f0d0045;
-        public static final int area4=0x7f0d0046;
-        public static final int area5=0x7f0d0047;
-        public static final int authButton=0x7f0d0023;
-        public static final int beacon_name=0x7f0d0036;
+        public static final int area1=0x7f0d004c;
+        public static final int area2=0x7f0d004d;
+        public static final int area3=0x7f0d004e;
+        public static final int area4=0x7f0d004f;
+        public static final int area5=0x7f0d0050;
+        public static final int authButton=0x7f0d002a;
+        public static final int beacon_name=0x7f0d003f;
         public static final int book_now=0x7f0d0010;
-        public static final int btnAchievementsHome=0x7f0d002a;
-        public static final int btnMapHome=0x7f0d0029;
-        public static final int btnNotificationsHome=0x7f0d002b;
-        public static final int btnScheduleHome=0x7f0d002d;
-        public static final int btnStreamingHome=0x7f0d002e;
-        public static final int btnTournamentsHome=0x7f0d002c;
-        public static final int buttonTakeOnEvent=0x7f0d0031;
+        public static final int btnAchievementsHome=0x7f0d0031;
+        public static final int btnFirstTeam=0x7f0d003e;
+        public static final int btnMapHome=0x7f0d0030;
+        public static final int btnNotificationsHome=0x7f0d0032;
+        public static final int btnScheduleHome=0x7f0d0034;
+        public static final int btnStreamingHome=0x7f0d0035;
+        public static final int btnTournamentsHome=0x7f0d0033;
+        public static final int buttonTakeOnEvent=0x7f0d0038;
         public static final int buyButton=0x7f0d000c;
         public static final int buy_now=0x7f0d0011;
         public static final int buy_with_google=0x7f0d0012;
         public static final int classic=0x7f0d0014;
-        public static final int counter=0x7f0d0027;
-        public static final int couponList=0x7f0d0022;
-        public static final int coupon_desc=0x7f0d0039;
-        public static final int coupon_imageview=0x7f0d0037;
-        public static final int coupon_name=0x7f0d0038;
-        public static final int delete_btn=0x7f0d003a;
+        public static final int counter=0x7f0d002e;
+        public static final int couponList=0x7f0d0029;
+        public static final int coupon_desc=0x7f0d0042;
+        public static final int coupon_imageview=0x7f0d0040;
+        public static final int coupon_name=0x7f0d0041;
+        public static final int delete_btn=0x7f0d0043;
         public static final int donate_with_google=0x7f0d0013;
         public static final int drawer_layout=0x7f0d0018;
         public static final int frame_container=0x7f0d0019;
@@ -581,18 +583,19 @@ containing a value of this type.
         public static final int holo_dark=0x7f0d0007;
         public static final int holo_light=0x7f0d0008;
         public static final int hybrid=0x7f0d0003;
-        public static final int icon=0x7f0d0025;
+        public static final int icon=0x7f0d002c;
         public static final int imageView1=0x7f0d0020;
+        public static final int ivMember=0x7f0d0022;
         public static final int list_slidermenu=0x7f0d001a;
         public static final int loaded_content=0x7f0d001f;
         public static final int loading=0x7f0d0021;
-        public static final int logButton=0x7f0d0034;
-        public static final int logName=0x7f0d0024;
-        public static final int lvNotification=0x7f0d0032;
-        public static final int lvSchedule=0x7f0d0033;
-        public static final int lvStreaming=0x7f0d0035;
-        public static final int map=0x7f0d0030;
-        public static final int map_container=0x7f0d002f;
+        public static final int logButton=0x7f0d003b;
+        public static final int logName=0x7f0d002b;
+        public static final int lvNotification=0x7f0d0039;
+        public static final int lvSchedule=0x7f0d003a;
+        public static final int lvStreaming=0x7f0d003c;
+        public static final int map=0x7f0d0037;
+        public static final int map_container=0x7f0d0036;
         public static final int match_parent=0x7f0d000e;
         public static final int monochrome=0x7f0d0016;
         public static final int none=0x7f0d0002;
@@ -603,21 +606,28 @@ containing a value of this type.
         public static final int selectionDetails=0x7f0d000d;
         public static final int slide=0x7f0d0017;
         public static final int strict_sandbox=0x7f0d000b;
+        public static final int svHorizontal=0x7f0d003d;
         public static final int terrain=0x7f0d0006;
-        public static final int title=0x7f0d0026;
+        public static final int title=0x7f0d002d;
+        public static final int tvCountry=0x7f0d0025;
         public static final int tvDescriptionDetails=0x7f0d001e;
-        public static final int tvEventLocation=0x7f0d0041;
-        public static final int tvEventName=0x7f0d0040;
+        public static final int tvEventLocation=0x7f0d004a;
+        public static final int tvEventName=0x7f0d0049;
         public static final int tvEventNameDetails=0x7f0d001b;
         public static final int tvEventTimeDetails=0x7f0d001c;
-        public static final int tvFrom=0x7f0d003d;
-        public static final int tvMinus=0x7f0d003e;
-        public static final int tvNotificationMessage=0x7f0d003c;
-        public static final int tvNotificationTitle=0x7f0d003b;
+        public static final int tvFrom=0x7f0d0046;
+        public static final int tvJoined=0x7f0d0027;
+        public static final int tvMember=0x7f0d0023;
+        public static final int tvMinus=0x7f0d0047;
+        public static final int tvNotificationMessage=0x7f0d0045;
+        public static final int tvNotificationTitle=0x7f0d0044;
+        public static final int tvResults=0x7f0d0028;
+        public static final int tvRole=0x7f0d0026;
         public static final int tvRoomDetails=0x7f0d001d;
-        public static final int tvStreamingLink=0x7f0d0042;
-        public static final int tvTo=0x7f0d003f;
-        public static final int txtLabel=0x7f0d0028;
+        public static final int tvStreamingLink=0x7f0d004b;
+        public static final int tvTeamTitle=0x7f0d0024;
+        public static final int tvTo=0x7f0d0048;
+        public static final int txtLabel=0x7f0d002f;
         public static final int wrap_content=0x7f0d000f;
     }
     public static final class integer {
@@ -627,173 +637,176 @@ containing a value of this type.
         public static final int activity_main=0x7f030000;
         public static final int activity_schedule_details=0x7f030001;
         public static final int activity_splash=0x7f030002;
-        public static final int coupon_activity=0x7f030003;
-        public static final int dialog_log=0x7f030004;
-        public static final int drawer_list_item=0x7f030005;
-        public static final int fragment_achievements=0x7f030006;
-        public static final int fragment_coupons=0x7f030007;
-        public static final int fragment_home=0x7f030008;
-        public static final int fragment_map=0x7f030009;
-        public static final int fragment_notification=0x7f03000a;
-        public static final int fragment_schedule=0x7f03000b;
-        public static final int fragment_settings=0x7f03000c;
-        public static final int fragment_streaming=0x7f03000d;
-        public static final int fragment_tournaments=0x7f03000e;
-        public static final int item_beacon=0x7f03000f;
-        public static final int item_coupon=0x7f030010;
-        public static final int notification_item=0x7f030011;
-        public static final int schedule_item=0x7f030012;
-        public static final int streaming_item=0x7f030013;
+        public static final int activity_team_details=0x7f030003;
+        public static final int coupon_activity=0x7f030004;
+        public static final int dialog_log=0x7f030005;
+        public static final int drawer_list_item=0x7f030006;
+        public static final int fragment_achievements=0x7f030007;
+        public static final int fragment_coupons=0x7f030008;
+        public static final int fragment_home=0x7f030009;
+        public static final int fragment_map=0x7f03000a;
+        public static final int fragment_notification=0x7f03000b;
+        public static final int fragment_schedule=0x7f03000c;
+        public static final int fragment_settings=0x7f03000d;
+        public static final int fragment_streaming=0x7f03000e;
+        public static final int fragment_tournaments=0x7f03000f;
+        public static final int item_beacon=0x7f030010;
+        public static final int item_coupon=0x7f030011;
+        public static final int notification_item=0x7f030012;
+        public static final int schedule_item=0x7f030013;
+        public static final int streaming_item=0x7f030014;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
         public static final int schedule_details=0x7f0c0001;
+        public static final int team_details=0x7f0c0002;
     }
     public static final class raw {
         public static final int gtm_analytics=0x7f050000;
     }
     public static final class string {
-        public static final int accept=0x7f070002;
-        public static final int action_example=0x7f070034;
-        public static final int action_settings=0x7f07002b;
-        public static final int api_get_content_fail_no_internet=0x7f07002f;
-        public static final int app_name=0x7f070026;
-        public static final int bluetooth_button=0x7f070036;
+        public static final int accept=0x7f060006;
+        public static final int action_example=0x7f060034;
+        public static final int action_settings=0x7f06002b;
+        public static final int api_get_content_fail_no_internet=0x7f06002f;
+        public static final int app_name=0x7f060000;
+        public static final int bluetooth_button=0x7f060036;
         /**   Text for notification shown when the Android Wear apps needs to be updated. Only shown on the wearable. [CHAR LIMIT=NONE] 
          */
-        public static final int common_android_wear_notification_needs_update_text=0x7f070009;
+        public static final int common_android_wear_notification_needs_update_text=0x7f06000d;
         /**  Message in confirmation dialog informing user that they need to update
         the Android Wear app [CHAR LIMIT=NONE] 
          */
-        public static final int common_android_wear_update_text=0x7f070016;
+        public static final int common_android_wear_update_text=0x7f06001a;
         /**  Title of confirmation dialog informing user that they need to update
         the Android Wear app (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_android_wear_update_title=0x7f070014;
+        public static final int common_android_wear_update_title=0x7f060018;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_enable_button=0x7f070012;
+        public static final int common_google_play_services_enable_button=0x7f060016;
         /**  Message in confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_enable_text=0x7f070011;
+        public static final int common_google_play_services_enable_text=0x7f060015;
         /**  Title of confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_enable_title=0x7f070010;
+        public static final int common_google_play_services_enable_title=0x7f060014;
         /**   Requested by string saying which app requested the notification. [CHAR LIMIT=42] 
          */
-        public static final int common_google_play_services_error_notification_requested_by_msg=0x7f07000b;
+        public static final int common_google_play_services_error_notification_requested_by_msg=0x7f06000f;
         /**  Button in confirmation dialog for installing Google Play services [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_install_button=0x7f07000f;
+        public static final int common_google_play_services_install_button=0x7f060013;
         /**  (For phones) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_install_text_phone=0x7f07000d;
+        public static final int common_google_play_services_install_text_phone=0x7f060011;
         /**  (For tablets) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_install_text_tablet=0x7f07000e;
+        public static final int common_google_play_services_install_text_tablet=0x7f060012;
         /**  Title of confirmation dialog informing user that they need to install
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_install_title=0x7f07000c;
+        public static final int common_google_play_services_install_title=0x7f060010;
         /**  Message in confirmation dialog informing the user that they provided an invalid account. [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_invalid_account_text=0x7f07001a;
+        public static final int common_google_play_services_invalid_account_text=0x7f06001e;
         /**  Title of confirmation dialog informing the user that they provided an invalid account. [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_invalid_account_title=0x7f070019;
+        public static final int common_google_play_services_invalid_account_title=0x7f06001d;
         /**   Title for notification shown when GooglePlayServices needs to be enabled for an
         application to work. [CHAR LIMIT=70] 
          */
-        public static final int common_google_play_services_needs_enabling_title=0x7f07000a;
+        public static final int common_google_play_services_needs_enabling_title=0x7f06000e;
         /**  Message in confirmation dialog informing the user that a network error occurred. [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_network_error_text=0x7f070018;
+        public static final int common_google_play_services_network_error_text=0x7f06001c;
         /**  Title of confirmation dialog informing the user that a network error occurred. [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_network_error_title=0x7f070017;
+        public static final int common_google_play_services_network_error_title=0x7f06001b;
         /**   Title for notification shown when GooglePlayServices needs to be installed
         for an application to work. [CHAR LIMIT=70] 
          */
-        public static final int common_google_play_services_notification_needs_installation_title=0x7f070007;
+        public static final int common_google_play_services_notification_needs_installation_title=0x7f06000b;
         /**   Title for notification shown when GooglePlayServices needs to be updated for an
         application to work. [CHAR LIMIT=70] 
          */
-        public static final int common_google_play_services_notification_needs_update_title=0x7f070008;
+        public static final int common_google_play_services_notification_needs_update_title=0x7f06000c;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=42] 
          */
-        public static final int common_google_play_services_notification_ticker=0x7f070006;
+        public static final int common_google_play_services_notification_ticker=0x7f06000a;
         /**  Message in confirmation dialog informing the user that the account could not be signed in. [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_sign_in_failed_text=0x7f070024;
+        public static final int common_google_play_services_sign_in_failed_text=0x7f060028;
         /**  Title of confirmation dialog informing the user that the account could not be signed in. [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_sign_in_failed_title=0x7f070023;
+        public static final int common_google_play_services_sign_in_failed_title=0x7f060027;
         /**  Message in confirmation dialog informing user there is an unknown issue in Google Play
         services [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_unknown_issue=0x7f07001b;
+        public static final int common_google_play_services_unknown_issue=0x7f06001f;
         /**  Message in confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_unsupported_text=0x7f07001d;
+        public static final int common_google_play_services_unsupported_text=0x7f060021;
         /**  Title of confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_unsupported_title=0x7f07001c;
+        public static final int common_google_play_services_unsupported_title=0x7f060020;
         /**  Button in confirmation dialog for updating Google Play services [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_update_button=0x7f07001e;
+        public static final int common_google_play_services_update_button=0x7f060022;
         /**  Message in confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_update_text=0x7f070015;
+        public static final int common_google_play_services_update_text=0x7f060019;
         /**  Title of confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_update_title=0x7f070013;
+        public static final int common_google_play_services_update_title=0x7f060017;
         /**  Label for an action to open a notifications content on the phone [CHAR LIMIT=25] 
          */
-        public static final int common_open_on_phone=0x7f070021;
+        public static final int common_open_on_phone=0x7f060025;
         /**  Sign-in button text [CHAR LIMIT=15] 
          */
-        public static final int common_signin_button_text=0x7f07001f;
+        public static final int common_signin_button_text=0x7f060023;
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
-        public static final int common_signin_button_text_long=0x7f070020;
+        public static final int common_signin_button_text_long=0x7f060024;
         /**  Message in confirmation dialog informing the user that one of the APIs they attepmt to access is not available. [CHAR LIMIT=NONE] 
          */
-        public static final int commono_google_play_services_api_unavailable_text=0x7f070022;
-        public static final int coupon_button=0x7f070035;
-        public static final int create_calendar_message=0x7f070005;
-        public static final int create_calendar_title=0x7f070004;
-        public static final int custom_button=0x7f070037;
-        public static final int decline=0x7f070003;
+        public static final int commono_google_play_services_api_unavailable_text=0x7f060026;
+        public static final int coupon_button=0x7f060035;
+        public static final int create_calendar_message=0x7f060009;
+        public static final int create_calendar_title=0x7f060008;
+        public static final int custom_button=0x7f060037;
+        public static final int decline=0x7f060007;
         /**  Content Description 
          */
-        public static final int desc_list_item_icon=0x7f070039;
-        public static final int drawer_close=0x7f07002d;
-        public static final int drawer_open=0x7f07002c;
-        public static final int facebook_app_id=0x7f070038;
-        public static final int hello_world=0x7f07002a;
-        public static final int no=0x7f070031;
-        public static final int ok=0x7f07002e;
-        public static final int onyx_service_notification_description=0x7f070029;
-        public static final int onyx_service_notification_title=0x7f070028;
-        public static final int service_name=0x7f070027;
-        public static final int splash=0x7f070032;
-        public static final int store_picture_message=0x7f070001;
-        public static final int store_picture_title=0x7f070000;
-        public static final int title_activity_main=0x7f070033;
-        public static final int title_activity_schedule_details=0x7f07003a;
+        public static final int desc_list_item_icon=0x7f060039;
+        public static final int drawer_close=0x7f06002d;
+        public static final int drawer_open=0x7f06002c;
+        public static final int facebook_app_id=0x7f060038;
+        public static final int hello_world=0x7f06002a;
+        public static final int no=0x7f060031;
+        public static final int ok=0x7f06002e;
+        public static final int onyx_service_notification_description=0x7f060003;
+        public static final int onyx_service_notification_title=0x7f060002;
+        public static final int service_name=0x7f060001;
+        public static final int splash=0x7f060032;
+        public static final int store_picture_message=0x7f060005;
+        public static final int store_picture_title=0x7f060004;
+        public static final int title_activity_main=0x7f060033;
+        public static final int title_activity_schedule_details=0x7f06003a;
+        public static final int title_activity_team_details=0x7f06003b;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */
-        public static final int wallet_buy_button_place_holder=0x7f070025;
-        public static final int yes=0x7f070030;
+        public static final int wallet_buy_button_place_holder=0x7f060029;
+        public static final int yes=0x7f060030;
     }
     public static final class style {
         /** 
@@ -837,23 +850,23 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060005;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060006;
-        public static final int Theme_IAPTheme=0x7f060000;
-        public static final int WalletFragmentDefaultButtonTextAppearance=0x7f060003;
-        public static final int WalletFragmentDefaultDetailsHeaderTextAppearance=0x7f060002;
-        public static final int WalletFragmentDefaultDetailsTextAppearance=0x7f060001;
+        public static final int AppTheme=0x7f070001;
+        public static final int Theme_IAPTheme=0x7f070002;
+        public static final int WalletFragmentDefaultButtonTextAppearance=0x7f070005;
+        public static final int WalletFragmentDefaultDetailsHeaderTextAppearance=0x7f070004;
+        public static final int WalletFragmentDefaultDetailsTextAppearance=0x7f070003;
         /** 
          Default style of the wallet fragment that will be used if not set explicitly
          when fragment is created
     
          */
-        public static final int WalletFragmentDefaultStyle=0x7f060004;
+        public static final int WalletFragmentDefaultStyle=0x7f070006;
     }
     public static final class xml {
         public static final int maps=0x7f040000;
