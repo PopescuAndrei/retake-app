@@ -412,14 +412,16 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f070006;
         public static final int common_signin_btn_light_text_focused=0x7f070007;
         public static final int common_signin_btn_light_text_pressed=0x7f070005;
-        public static final int common_signin_btn_text_dark=0x7f07001d;
-        public static final int common_signin_btn_text_light=0x7f07001e;
+        public static final int common_signin_btn_text_dark=0x7f07001f;
+        public static final int common_signin_btn_text_light=0x7f070020;
         public static final int counter_text_bg=0x7f07001b;
         public static final int counter_text_color=0x7f07001c;
         public static final int list_background=0x7f070018;
         public static final int list_background_pressed=0x7f070019;
         public static final int list_divider=0x7f07001a;
         public static final int list_item_title=0x7f070017;
+        public static final int retake=0x7f07001d;
+        public static final int retakeCyan=0x7f07001e;
         public static final int wallet_bright_foreground_disabled_holo_light=0x7f07000f;
         /** 
          Wallet colors to support consistent Wallet fragment holo dark UI in client application
@@ -438,8 +440,8 @@ containing a value of this type.
         public static final int wallet_hint_foreground_holo_light=0x7f070011;
         public static final int wallet_holo_blue_light=0x7f070015;
         public static final int wallet_link_text_light=0x7f070016;
-        public static final int wallet_primary_text_holo_light=0x7f07001f;
-        public static final int wallet_secondary_text_holo_dark=0x7f070020;
+        public static final int wallet_primary_text_holo_light=0x7f070021;
+        public static final int wallet_secondary_text_holo_dark=0x7f070022;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -502,23 +504,33 @@ containing a value of this type.
         public static final int list_item_bg_normal=0x7f02002e;
         public static final int list_item_bg_pressed=0x7f02002f;
         public static final int list_selector=0x7f020030;
+<<<<<<< HEAD
         public static final int pins=0x7f020031;
+=======
+        public static final int mapbutton=0x7f020031;
+>>>>>>> 79dfc322bb49fb1407e77c3c9badde05167a5fa4
         public static final int powered_by_google_dark=0x7f020032;
         public static final int powered_by_google_light=0x7f020033;
         public static final int splashtemp=0x7f020034;
         public static final int sporti=0x7f020035;
     }
     public static final class id {
-        public static final int action_settings=0x7f0c0030;
+        public static final int action_settings=0x7f0c003a;
         public static final int adjust_height=0x7f0c0000;
         public static final int adjust_width=0x7f0c0001;
         public static final int book_now=0x7f0c0010;
-        public static final int buttonTakeOnEvent=0x7f0c0024;
+        public static final int btnAchievementsHome=0x7f0c0027;
+        public static final int btnMapHome=0x7f0c0026;
+        public static final int btnNotificationsHome=0x7f0c0028;
+        public static final int btnScheduleHome=0x7f0c002a;
+        public static final int btnStreamingHome=0x7f0c002b;
+        public static final int btnTournamentsHome=0x7f0c0029;
+        public static final int buttonTakeOnEvent=0x7f0c002e;
         public static final int buyButton=0x7f0c000c;
         public static final int buy_now=0x7f0c0011;
         public static final int buy_with_google=0x7f0c0012;
         public static final int classic=0x7f0c0014;
-        public static final int counter=0x7f0c0020;
+        public static final int counter=0x7f0c0024;
         public static final int donate_with_google=0x7f0c0013;
         public static final int drawer_layout=0x7f0c0018;
         public static final int frame_container=0x7f0c0019;
@@ -526,16 +538,16 @@ containing a value of this type.
         public static final int holo_dark=0x7f0c0007;
         public static final int holo_light=0x7f0c0008;
         public static final int hybrid=0x7f0c0003;
-        public static final int icon=0x7f0c001e;
-        public static final int imageView1=0x7f0c001c;
+        public static final int icon=0x7f0c0022;
+        public static final int imageView1=0x7f0c0020;
         public static final int list_slidermenu=0x7f0c001a;
-        public static final int loaded_content=0x7f0c001b;
-        public static final int loading=0x7f0c001d;
-        public static final int lvNotification=0x7f0c0025;
-        public static final int lvSchedule=0x7f0c0026;
-        public static final int lvStreaming=0x7f0c0027;
-        public static final int map=0x7f0c0023;
-        public static final int map_container=0x7f0c0022;
+        public static final int loaded_content=0x7f0c001f;
+        public static final int loading=0x7f0c0021;
+        public static final int lvNotification=0x7f0c002f;
+        public static final int lvSchedule=0x7f0c0030;
+        public static final int lvStreaming=0x7f0c0031;
+        public static final int map=0x7f0c002d;
+        public static final int map_container=0x7f0c002c;
         public static final int match_parent=0x7f0c000e;
         public static final int monochrome=0x7f0c0016;
         public static final int none=0x7f0c0002;
@@ -547,16 +559,20 @@ containing a value of this type.
         public static final int slide=0x7f0c0017;
         public static final int strict_sandbox=0x7f0c000b;
         public static final int terrain=0x7f0c0006;
-        public static final int title=0x7f0c001f;
-        public static final int tvEventLocation=0x7f0c002e;
-        public static final int tvEventName=0x7f0c002d;
-        public static final int tvFrom=0x7f0c002a;
-        public static final int tvMinus=0x7f0c002b;
-        public static final int tvNotificationMessage=0x7f0c0029;
-        public static final int tvNotificationTitle=0x7f0c0028;
-        public static final int tvStreamingLink=0x7f0c002f;
-        public static final int tvTo=0x7f0c002c;
-        public static final int txtLabel=0x7f0c0021;
+        public static final int title=0x7f0c0023;
+        public static final int tvDescriptionDetails=0x7f0c001e;
+        public static final int tvEventLocation=0x7f0c0038;
+        public static final int tvEventName=0x7f0c0037;
+        public static final int tvEventNameDetails=0x7f0c001b;
+        public static final int tvEventTimeDetails=0x7f0c001c;
+        public static final int tvFrom=0x7f0c0034;
+        public static final int tvMinus=0x7f0c0035;
+        public static final int tvNotificationMessage=0x7f0c0033;
+        public static final int tvNotificationTitle=0x7f0c0032;
+        public static final int tvRoomDetails=0x7f0c001d;
+        public static final int tvStreamingLink=0x7f0c0039;
+        public static final int tvTo=0x7f0c0036;
+        public static final int txtLabel=0x7f0c0025;
         public static final int wrap_content=0x7f0c000f;
     }
     public static final class integer {
