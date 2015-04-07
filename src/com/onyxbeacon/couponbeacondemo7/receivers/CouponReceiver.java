@@ -1,8 +1,11 @@
 package com.onyxbeacon.couponbeacondemo7.receivers;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -11,17 +14,15 @@ import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 
+import com.example.retakeapp.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.onyxbeacon.OnyxBeaconApplication;
 import com.onyxbeacon.OnyxBeaconCouponListener;
-import com.onyxbeacon.couponbeacondemo7.R;
-import com.onyxbeacon.couponbeacondemo7.activity.MainActivity;
 import com.onyxbeacon.model.web.Coupon;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import com.retake.retakeapp.main.MainActivity;
 
 /**
  * Created by Luci on 5/22/2014.

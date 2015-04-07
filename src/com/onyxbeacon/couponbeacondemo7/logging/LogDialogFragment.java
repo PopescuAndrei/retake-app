@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.onyxbeacon.couponbeacondemo7.R;
+import com.example.retakeapp.R;
 
 /**
  * Created by Work 2 on 12/17/2014.

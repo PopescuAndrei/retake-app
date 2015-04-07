@@ -1,7 +1,9 @@
 package com.retake.retakeapp.main;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
+import android.app.DialogFragment;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -12,17 +14,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.retakeapp.R;
+import com.onyxbeacon.OnyxBeaconApplication;
+import com.onyxbeacon.OnyxBeaconManager;
+import com.onyxbeacon.couponbeacondemo7.fragments.BeaconFragment;
+import com.onyxbeacon.couponbeacondemo7.logging.LogDialogFragment;
+import com.onyxbeacon.couponbeacondemo7.logging.MyLogger;
 import com.retake.retakeapp.map.FragmentMap;
 import com.retake.retakeapp.notifications.NotificationFragment;
 import com.retake.retakeapp.schedule.ScheduleFragment;
 import com.retake.retakeapp.streaming.StreamingFragment;
 
 @SuppressWarnings("deprecation")
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends FragmentActivity implements
+		LogDialogFragment.LogDialogListener {
 	private DrawerLayout mDrawerLayout;
+
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
 
@@ -45,6 +56,13 @@ public class MainActivity extends FragmentActivity {
 	private AchievementsFragment fragmentAchievements;
 	private TournamentsFragment fragmentTournaments;
 	private HomeFragment fragmentHome;
+	private BeaconFragment fragmentBeacon;
+
+	public static final String LOGGER_KEY = "LoggerKey";
+	private MyLogger mLogger;
+	public static final String EXTRA_COUPONS = "coupons";
+	private BeaconFragment beaconFragment;
+	private OnyxBeaconManager mManager;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -125,6 +143,23 @@ public class MainActivity extends FragmentActivity {
 			// on first time display view for first nav item
 			displayView(0);
 		}
+
+		try {
+			mLogger = new MyLogger(this);
+		} catch (IOException exception) {
+			mLogger = null;
+		}
+
+		Bundle bundle = new Bundle();
+		bundle.putSerializable(LOGGER_KEY, mLogger);
+
+		// Initialize OnyxBeaconManager
+		mManager = OnyxBeaconApplication.getOnyxBeaconManager(this);
+		// Enable beacons and coupons retrieval
+		mManager.setCouponEnabled(true);
+		mManager.setAPIContentEnabled(true);
+		mManager.setLogger(mLogger);
+
 	}
 
 	/**
@@ -189,7 +224,7 @@ public class MainActivity extends FragmentActivity {
 			launchAchievements(2);
 			break;
 		case 3:
-			launchNotification(3);
+			launchBeacons(3);
 			break;
 		case 4:
 			launchSchedule(4);
@@ -414,7 +449,7 @@ public class MainActivity extends FragmentActivity {
 
 		}
 	}
-	
+
 	public void launchHome(int position) {
 		if (fragmentHome == null) {
 			fragmentHome = new HomeFragment();
@@ -445,4 +480,68 @@ public class MainActivity extends FragmentActivity {
 
 		}
 	}
+	public void launchBeacons(int position) {
+		if (fragmentBeacon == null) {
+			fragmentBeacon = new BeaconFragment();
+		}
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		android.support.v4.app.Fragment currentFrag = getSupportFragmentManager()
+				.findFragmentById(R.id.frame_container);
+		mDrawerList.setItemChecked(position, true);
+		mDrawerList.setSelection(position);
+		setTitle(navMenuTitles[position]);
+		mDrawerLayout.closeDrawer(mDrawerList);
+		if (currentFrag != fragmentBeacon) {
+
+			if (currentFrag != null) {
+				transaction.remove(currentFrag);
+			}
+
+			if (!fragmentBeacon.isAdded()) {
+				transaction.add(R.id.frame_container, fragmentBeacon);
+			} else { 
+				transaction.show(fragmentBeacon);
+			}
+
+			transaction.addToBackStack(null);
+			transaction.commit();
+
+		}
+	}
+	public void onDialogPositiveClick(DialogFragment dialog) {
+		EditText logName = (EditText) dialog.getDialog().findViewById(
+				R.id.logName);
+	}
+
+	@Override
+	public void onDialogNegativeClick(DialogFragment dialog) {
+		dialog.getDialog().cancel();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		if (mManager.isBluetoothAvailable()) {
+			// Enable scanner in foreground mode and register receiver
+			mManager.setForegroundMode(true);
+		} else {
+			Toast.makeText(this, "Please turn on bluetooth", Toast.LENGTH_LONG)
+					.show();
+		}
+	}
+	
+	@Override
+	public void onPause() {
+		super.onPause();
+		// Set scanner in background mode
+		mManager.setForegroundMode(false);
+	}
+
+	public MyLogger getLogger() {
+		return mLogger;
+	}
+	
+	
 }

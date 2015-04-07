@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.example.retakeapp">
 
-    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="22"/>
+    <uses-sdk android:minSdkVersion="18" android:targetSdkVersion="22"/>
 
     <uses-permission android:name="com.retake.retakeapp.map.permission.MAPS_RECEIVE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -44,6 +44,50 @@
         </activity>
         <activity android:name="com.retake.retakeapp.schedule.ScheduleDetails" android:screenOrientation="portrait">
         </activity>
+
+        <activity android:hardwareAccelerated="true" android:name="com.onyxbeacon.CouponDetailsActivity" android:theme="@android:style/Theme.Holo"/>
+
+        <service android:enabled="true" android:name="com.onyxbeacon.service.OnyxBeaconService" android:process=":onyx"/>
+
+        <service android:enabled="true" android:exported="false" android:label="@string/service_name" android:name="com.onyxbeaconservice.service.IBeaconService">
+
+            <intent-filter>
+                <action android:name="com.onyxbeaconservice.service.IBeaconService"/>
+            </intent-filter>
+        </service>
+
+        <receiver android:name="com.onyxbeaconservice.service.receivers.AlarmBroadcastReceiver"/>
+
+        <receiver android:name="com.onyxbeacon.receivers.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.onyxbeaconservice.service.receivers.BootBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:enabled="false" android:name="com.onyxbeaconservice.service.receivers.BluetoothChangeReceiver">
+            <intent-filter>
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.onyxbeaconservice.service.receivers.AppBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+
+        <provider android:authorities="com.onyxbeaconservice.provider" android:enabled="true" android:exported="false" android:name="com.onyxbeaconservice.provider.IBeaconProvider"/>
     </application>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
 </manifest>

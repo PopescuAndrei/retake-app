@@ -1,34 +1,32 @@
 package com.onyxbeacon.couponbeacondemo7.fragments;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.retakeapp.R;
 import com.onyxbeacon.OnyxBeaconAPIListener;
-import com.onyxbeacon.OnyxBeaconApplication;
 import com.onyxbeacon.OnyxBeaconManager;
 import com.onyxbeacon.couponbeacondemo7.receivers.IBeaconReceiver;
 import com.onyxbeaconservice.IBeacon;
-import com.onyxbeaconservice.client.BleNotAvailableException;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.retake.retakeapp.base.BaseFragment;
+import com.retake.retakeapp.base.BaseModel;
 
 /**
  * Created by Work 2 on 10/15/2014.
  */
-public class BeaconFragment extends Fragment implements OnyxBeaconAPIListener {
+public class BeaconFragment extends BaseFragment implements OnyxBeaconAPIListener {
     private OnyxBeaconManager mManager;
     private ListView mListView;
     private Activity mFragmentActivity;
@@ -150,6 +148,24 @@ public class BeaconFragment extends Fragment implements OnyxBeaconAPIListener {
             return rowView;
         }
     }
+
+	@Override
+	public void onResponse(BaseModel model) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initUI(View view) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void onAfterStart() {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 
