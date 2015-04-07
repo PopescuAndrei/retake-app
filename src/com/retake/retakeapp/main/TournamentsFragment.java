@@ -18,7 +18,7 @@ public class TournamentsFragment extends BaseFragment {
 	private ScrollView scrollView;
 	private Button btnFirstTeam;
 
-	public TournamentsFragment() {
+	public TournamentsFragment() {   
 	}
 
 	@Override
