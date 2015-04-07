@@ -124,20 +124,13 @@ int drawable ic_tournaments 0x7f02002d
 int drawable list_item_bg_normal 0x7f02002e
 int drawable list_item_bg_pressed 0x7f02002f
 int drawable list_selector 0x7f020030
-<<<<<<< HEAD
-int drawable pins 0x7f020031
-=======
 int drawable mapbutton 0x7f020031
->>>>>>> 79dfc322bb49fb1407e77c3c9badde05167a5fa4
-int drawable powered_by_google_dark 0x7f020032
-int drawable powered_by_google_light 0x7f020033
-int drawable splashtemp 0x7f020034
-int drawable sporti 0x7f020035
-<<<<<<< HEAD
-int id action_settings 0x7f0c0030
-=======
+int drawable pins 0x7f020032
+int drawable powered_by_google_dark 0x7f020033
+int drawable powered_by_google_light 0x7f020034
+int drawable splashtemp 0x7f020035
+int drawable sporti 0x7f020036
 int id action_settings 0x7f0c003a
->>>>>>> 79dfc322bb49fb1407e77c3c9badde05167a5fa4
 int id adjust_height 0x7f0c0000
 int id adjust_width 0x7f0c0001
 int id book_now 0x7f0c0010

@@ -29,18 +29,20 @@
 
         <uses-library android:name="com.google.android.maps"/>
 
-        <activity android:label="@string/app_name" android:name="com.retake.retakeapp.SplashActivity" android:noHistory="true" android:theme="@android:style/Theme.Black.NoTitleBar">
+        <activity android:label="@string/app_name" android:name="com.retake.retakeapp.SplashActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:label="@string/app_name" android:name="com.retake.retakeapp.main.MainActivity">
+        <activity android:label="@string/app_name" android:name="com.retake.retakeapp.main.MainActivity" android:screenOrientation="portrait">
         </activity>
-        <activity android:label="@string/app_name" android:name="com.example.retake.map.FragmentMap">
+        <activity android:label="@string/app_name" android:name="com.example.retake.map.FragmentMap" android:screenOrientation="portrait">
         </activity>
-        <activity android:label="@string/title_activity_schedule_details" android:name="com.retake.retakeapp.schedule.ScheduleDetails">
+        <activity android:label="@string/title_activity_schedule_details" android:name="com.retake.retakeapp.schedule.ScheduleDetailsFragment" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.retake.retakeapp.schedule.ScheduleDetails" android:screenOrientation="portrait">
         </activity>
     </application>
 
