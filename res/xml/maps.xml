@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<maps xmlns:android="http://schemas.android.com/apk/res/android">
+    <map name="ladder">
+
+        <!-- example coordonates -->
+        <area shape="poly" coords="230,35,294,38,299,57,299,79,228,79" id="@+id/area1" name = "N. Dakota"/>
+		<area shape="poly" coords="227,80,299,80,302,120,282,116,226,116" id="@+id/area2" name = "S. Dakota"/>
+		<area shape="poly" coords="229,35,226,87,154,81,145,86,131,69,123,21" id="@+id/area3" name = "Montana"/>
+		<area shape="poly" coords="224,89,223,143,148,136,156,83" id="@+id/area4" name = "Wyoming"/>
+		<area shape="poly" coords="169,141,241,147,241,197,162,191" id="@+id/area5" name = "Colorado"/>
+
+	</map>
+</maps>
