@@ -432,6 +432,7 @@ containing a value of this type.
         public static final int zOrderOnTop=0x7f010014;
     }
     public static final class color {
+        public static final int actionbar_background=0x7f08001f;
         public static final int common_action_bar_splitter=0x7f080009;
         /**  Sign-in Button Colors 
          */
@@ -444,8 +445,8 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f080006;
         public static final int common_signin_btn_light_text_focused=0x7f080007;
         public static final int common_signin_btn_light_text_pressed=0x7f080005;
-        public static final int common_signin_btn_text_dark=0x7f08001f;
-        public static final int common_signin_btn_text_light=0x7f080020;
+        public static final int common_signin_btn_text_dark=0x7f080020;
+        public static final int common_signin_btn_text_light=0x7f080021;
         public static final int counter_text_bg=0x7f08001b;
         public static final int counter_text_color=0x7f08001c;
         public static final int list_background=0x7f080018;
@@ -472,8 +473,8 @@ containing a value of this type.
         public static final int wallet_hint_foreground_holo_light=0x7f080011;
         public static final int wallet_holo_blue_light=0x7f080015;
         public static final int wallet_link_text_light=0x7f080016;
-        public static final int wallet_primary_text_holo_light=0x7f080021;
-        public static final int wallet_secondary_text_holo_dark=0x7f080022;
+        public static final int wallet_primary_text_holo_light=0x7f080022;
+        public static final int wallet_secondary_text_holo_dark=0x7f080023;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -860,6 +861,12 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f070001;
+        /**  the theme applied to the application or activity 
+         */
+        public static final int CustomActionBarTheme=0x7f070007;
+        /**  ActionBar styles 
+         */
+        public static final int MyActionBar=0x7f070008;
         public static final int Theme_IAPTheme=0x7f070002;
         public static final int WalletFragmentDefaultButtonTextAppearance=0x7f070005;
         public static final int WalletFragmentDefaultDetailsHeaderTextAppearance=0x7f070004;

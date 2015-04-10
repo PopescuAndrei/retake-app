@@ -9,5 +9,6 @@
     <color name="counter_text_color">#c5c4c4</color>
     <color name="retake">#0F4051</color>
     <color name="retakeCyan">#32BDA7</color>
+    <color name="actionbar_background">#0F4051</color>
 
 </resources>
