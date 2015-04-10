@@ -180,7 +180,6 @@ public class MainActivity extends FragmentActivity implements
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		this.invalidateOptionsMenu();
-		menu.findItem(R.id.action_settings).setVisible(false);
 		return true;
 	}
 
@@ -192,8 +191,8 @@ public class MainActivity extends FragmentActivity implements
 		}
 		// Handle action bar actions click
 		switch (item.getItemId()) {
-		case R.id.action_settings:
-			return true;
+		// case R.id.action_settings:
+		// return false;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
@@ -205,8 +204,8 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
 		// if nav drawer is opened, hide the action items
-		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-		menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+		// boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+		// menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
 		return super.onPrepareOptionsMenu(menu);
 	}
 

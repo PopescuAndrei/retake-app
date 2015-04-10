@@ -141,7 +141,6 @@ int drawable powered_by_google_dark 0x7f020039
 int drawable powered_by_google_light 0x7f02003a
 int drawable splashtemp 0x7f02003b
 int drawable sporti 0x7f02003c
-int id action_settings 0x7f0d0051
 int id adjust_height 0x7f0d0000
 int id adjust_width 0x7f0d0001
 int id area1 0x7f0d004c
@@ -246,8 +245,6 @@ int layout notification_item 0x7f030012
 int layout schedule_item 0x7f030013
 int layout streaming_item 0x7f030014
 int menu main 0x7f0c0000
-int menu schedule_details 0x7f0c0001
-int menu team_details 0x7f0c0002
 int raw gtm_analytics 0x7f050000
 int string accept 0x7f060006
 int string action_example 0x7f060034

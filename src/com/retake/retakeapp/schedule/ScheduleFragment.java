@@ -43,6 +43,7 @@ public class ScheduleFragment extends BaseFragment {
 		return rootView;
 	}
 
+	//here the shit should be done, dar nu avem conexiune la server
 	@Override
 	public void onResponse(BaseModel model) {
 		if (model instanceof ScheduleListModel) {

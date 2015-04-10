@@ -551,7 +551,6 @@ containing a value of this type.
         public static final int sporti=0x7f02003c;
     }
     public static final class id {
-        public static final int action_settings=0x7f0d0051;
         public static final int adjust_height=0x7f0d0000;
         public static final int adjust_width=0x7f0d0001;
         public static final int area1=0x7f0d004c;
@@ -662,8 +661,6 @@ containing a value of this type.
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
-        public static final int schedule_details=0x7f0c0001;
-        public static final int team_details=0x7f0c0002;
     }
     public static final class raw {
         public static final int gtm_analytics=0x7f050000;

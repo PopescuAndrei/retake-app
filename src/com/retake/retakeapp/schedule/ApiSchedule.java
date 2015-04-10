@@ -12,8 +12,10 @@ public class ApiSchedule extends BaseApiInterface {
 	// methods for getting the list and parsing it
 	// need to talk with ciprian
 
+	// in mare, aici se face request-ul si se pun datele din json
+	// pe un List<ScheduleModel>
 	public void getSchedule() {
-		// gets list and returns list to a
+		// gets list and returns list to onGetSchedule
 	}
 
 	// will pass an model in on response method of the fragment
