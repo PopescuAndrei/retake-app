@@ -159,7 +159,7 @@ public class MainActivity extends FragmentActivity implements
 		// Enable beacons and coupons retrieval
 		mManager.setCouponEnabled(true);
 		mManager.setAPIContentEnabled(true);
-//		mManager.setLogger(mLogger);
+		mManager.setLogger(mLogger);
 
 	}
 

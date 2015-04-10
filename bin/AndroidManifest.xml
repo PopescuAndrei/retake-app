@@ -14,8 +14,8 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
 
     <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
-        <meta-data android:name="clientid" android:value="daf8a02a87752a95bec465280cb669ae226627d2"/>
-        <meta-data android:name="secret" android:value="728de17b93eba704848a88f1fcb8f6e193c70b1f"/>
+        <meta-data android:name="clientid" android:value="6f4bac2d1d14bc910e444b3e8b2c24bd4b427e2d"/>
+        <meta-data android:name="secret" android:value="eebb416ddabaf10ad484c1f52429b8ca0b6d5dc6"/>
 
         <receiver android:name="com.retake.retakeapp.receivers.CouponReceiver">
             <intent-filter>
