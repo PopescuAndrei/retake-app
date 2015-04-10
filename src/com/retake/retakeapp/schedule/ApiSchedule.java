@@ -1,5 +1,7 @@
 package com.retake.retakeapp.schedule;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -21,27 +24,7 @@ public class ApiSchedule extends BaseApiInterface {
 
 	public void getSchedule() {
 		asyncTask = (JSONParse) new JSONParse().execute();
-	}
-
-	public void onGetSchedule(List<ScheduleModel> list, String error, int seq) {
-		if (apiListener != null) {
-			if (seq == 1) {
-				if (list.size() != 0) {
-					ScheduleListModel scheduleListModel = new ScheduleListModel();
-					scheduleListModel.scheduleList = list;
-					apiListener.onResponse(scheduleListModel);
-				} else if (list.size() == 0) {
-					ModelFailureResponse mfr = new ModelFailureResponse();
-					mfr.setDescription(error);
-					apiListener.onResponse(mfr);
-				}
-			} else {
-				ModelOfflineData mod = new ModelOfflineData();
-				apiListener.onResponse(mod);
-			}
-		} else {
-			Log.i("api null", "yes");
-		}
+		// onGetSchedule(null, "", 0);
 	}
 
 	private class JSONParse extends AsyncTask<String, String, JSONObject> {
@@ -49,6 +32,7 @@ public class ApiSchedule extends BaseApiInterface {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
+
 		}
 
 		@Override
@@ -62,48 +46,65 @@ public class ApiSchedule extends BaseApiInterface {
 		protected void onPostExecute(JSONObject json) {
 			try {
 				int seq = Integer.parseInt(json.getString("seq"));
-				if (seq == 1) {
+				if (seq == 0) {
 					JSONObject orar = json.getJSONObject("orar");
 					JSONArray day1 = orar.getJSONArray("day1");
 					JSONArray day2 = orar.getJSONArray("day2");
 					JSONArray day3 = orar.getJSONArray("day3");
-					List<ScheduleModel> listModel = new ArrayList<ScheduleModel>();
+
+					List<ScheduleModel> scheduleList = new ArrayList<ScheduleModel>();
 					for (int i = 0; i < day1.length(); i++) {
 						JSONObject obj = day1.getJSONObject(i);
-						ScheduleModel model = new ScheduleModel();
-						model.setDay("Day 1");
-						model.setDescription(obj.getString("desc"));
-						model.setStart(obj.getString("start"));
-						model.setEnd(obj.getString("end"));
-						System.out.println(model.toString());
-						listModel.add(model);
+						scheduleList.add(new ScheduleModel("Day 1", obj
+								.getString("start"), obj.getString("end"), obj
+								.getString("name"), obj.getString("desc")));
 					}
 					for (int i = 0; i < day2.length(); i++) {
 						JSONObject obj = day2.getJSONObject(i);
-						ScheduleModel model = new ScheduleModel();
-						model.setDay("Day 1");
-						model.setDescription(obj.getString("desc"));
-						model.setStart(obj.getString("start"));
-						model.setEnd(obj.getString("end"));
-						listModel.add(model);
+						scheduleList.add(new ScheduleModel("Day 2", obj
+								.getString("start"), obj.getString("end"), obj
+								.getString("name"), obj.getString("desc")));
 					}
 					for (int i = 0; i < day3.length(); i++) {
 						JSONObject obj = day3.getJSONObject(i);
-						ScheduleModel model = new ScheduleModel();
-						model.setDay("Day 1");
-						model.setDescription(obj.getString("desc"));
-						model.setStart(obj.getString("start"));
-						model.setEnd(obj.getString("end"));
-						listModel.add(model);
+						scheduleList.add(new ScheduleModel("Day 3", obj
+								.getString("start"), obj.getString("end"), obj
+								.getString("name"), obj.getString("desc")));
 					}
-					onGetSchedule(listModel, "", 1);
+					for (ScheduleModel sm : scheduleList) {
+						Log.w("sdfasfsafSA", sm.toString());
+					}
+					onGetSchedule(scheduleList, "", 1);
 				} else {
 					onGetSchedule(null, "no update", 0);
 				}
 			} catch (JSONException e) {
-				// TODO Auto-generated catch block
+				onGetSchedule(null, "no update", 0);
 				e.printStackTrace();
 			}
 		}
 	}
+
+	public void onGetSchedule(List<ScheduleModel> list, String error, int seq) {
+		if (apiListener != null) {
+			if (seq == 1) {
+				if (list.size() != 0) {
+					ScheduleListModel scheduleListModel = new ScheduleListModel();
+					scheduleListModel.scheduleList = list;
+					apiListener.onResponse(scheduleListModel);
+				} else if (list.size() == 0) {
+					ModelOfflineData mod = new ModelOfflineData();
+					apiListener.onResponse(mod);
+				}
+			} else {
+				ModelOfflineData mod = new ModelOfflineData();
+				apiListener.onResponse(mod);
+			}
+		} else {
+			ModelOfflineData mod = new ModelOfflineData();
+			apiListener.onResponse(mod);
+			Log.i("api null", "yes");
+		}
+	}
+
 }

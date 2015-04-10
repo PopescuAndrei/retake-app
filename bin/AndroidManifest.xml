@@ -43,7 +43,7 @@
         </activity>
         <activity android:name="com.retake.retakeapp.schedule.ScheduleDetails" android:screenOrientation="portrait">
         </activity>
-        <activity android:label="@string/title_activity_team_details" android:name="com.retake.retakeapp.main.TeamDetails">
+        <activity android:label="@string/title_activity_team_details" android:name="com.retake.retakeapp.tournaments.TeamDetails">
         </activity>
 
         <activity android:hardwareAccelerated="true" android:name="com.onyxbeacon.CouponDetailsActivity" android:theme="@android:style/Theme.Holo"/>

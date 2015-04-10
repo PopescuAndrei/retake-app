@@ -80,6 +80,7 @@ public class AdapterSchedule extends BaseAdapter {
 			viewHolder.tvTo = (TextView) convertView.findViewById(R.id.tvTo);
 			viewHolder.tvEventName = (TextView) convertView
 					.findViewById(R.id.tvEventName);
+			viewHolder.tvDay = (TextView) convertView.findViewById(R.id.tvDay);
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (Holder) convertView.getTag();
@@ -89,11 +90,13 @@ public class AdapterSchedule extends BaseAdapter {
 					.setText(scheduleList.get(position).getName());
 			viewHolder.tvFrom.setText(scheduleList.get(position).getStart());
 			viewHolder.tvTo.setText(scheduleList.get(position).getEnd());
+			viewHolder.tvDay.setText(scheduleList.get(position).getDay());
 		}
 		return convertView;
 	}
 
 	public static class Holder {
-		TextView tvFrom, tvTo, tvEventName;
+		TextView tvFrom, tvTo, tvEventName, tvDay;
 	}
+
 }

@@ -31,6 +31,7 @@ import com.retake.retakeapp.map.FragmentMap;
 import com.retake.retakeapp.notifications.NotificationFragment;
 import com.retake.retakeapp.schedule.ScheduleFragment;
 import com.retake.retakeapp.streaming.StreamingFragment;
+import com.retake.retakeapp.tournaments.TournamentsFragment;
 
 @SuppressWarnings("deprecation")
 public class MainActivity extends FragmentActivity implements

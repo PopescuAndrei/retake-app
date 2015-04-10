@@ -61,4 +61,10 @@ public class ScheduleModel {
 		this.description = description;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.name;
+	}
+
 }

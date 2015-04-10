@@ -30,22 +30,11 @@
 
         <TextView
             android:id="@+id/tvEventTimeDetails"
-            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:gravity="center_vertical|center_horizontal"
             android:text="12:00 - 14:00"
-            android:textColor="@android:color/white"
-            android:textSize="24sp" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/tvRoomDetails"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="Sala B"
             android:textColor="@android:color/white"
             android:textSize="24sp" >
         </TextView>

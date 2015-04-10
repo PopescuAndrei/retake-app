@@ -11,6 +11,7 @@ import org.json.JSONObject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,8 +54,9 @@ public class ScheduleFragment extends BaseFragment {
 	public void onResponse(BaseModel model) {
 		if (model instanceof ScheduleListModel) {
 			scheduleList = ((ScheduleListModel) model).scheduleList;
-			adapter = new AdapterSchedule();
-			adapter.setItems(scheduleList);
+			adapter = new AdapterSchedule(
+					getActivity().getApplicationContext(), scheduleList);
+			lvSchedule.setAdapter(adapter);
 
 		} else if (model instanceof ModelOfflineData
 				|| model instanceof ModelFailureResponse) {
@@ -65,36 +67,31 @@ public class ScheduleFragment extends BaseFragment {
 				JSONArray day1 = orar.getJSONArray("day1");
 				JSONArray day2 = orar.getJSONArray("day2");
 				JSONArray day3 = orar.getJSONArray("day3");
-				List<ScheduleModel> listModel = new ArrayList<ScheduleModel>();
+
+				scheduleList = new ArrayList<ScheduleModel>();
 				for (int i = 0; i < day1.length(); i++) {
 					JSONObject obj = day1.getJSONObject(i);
-					ScheduleModel modelS = new ScheduleModel();
-					modelS.setDay("Day 1");
-					modelS.setDescription(obj.getString("desc"));
-					modelS.setStart(obj.getString("start"));
-					modelS.setEnd(obj.getString("end"));
-					listModel.add(modelS);
+					scheduleList.add(new ScheduleModel("Day 1", obj
+							.getString("start"), obj.getString("end"), obj
+							.getString("name"), obj.getString("desc")));
+					Log.w("NU MERGE IN MM", scheduleList.get(i).toString()
+							+ " ");
 				}
 				for (int i = 0; i < day2.length(); i++) {
 					JSONObject obj = day2.getJSONObject(i);
-					ScheduleModel modelS = new ScheduleModel();
-					modelS.setDay("Day 1");
-					modelS.setDescription(obj.getString("desc"));
-					modelS.setStart(obj.getString("start"));
-					modelS.setEnd(obj.getString("end"));
-					listModel.add(modelS);
+					scheduleList.add(new ScheduleModel("Day 1", obj
+							.getString("start"), obj.getString("end"), obj
+							.getString("name"), obj.getString("desc")));
 				}
 				for (int i = 0; i < day3.length(); i++) {
 					JSONObject obj = day3.getJSONObject(i);
-					ScheduleModel modelS = new ScheduleModel();
-					modelS.setDay("Day 1");
-					modelS.setDescription(obj.getString("desc"));
-					modelS.setStart(obj.getString("start"));
-					modelS.setEnd(obj.getString("end"));
-					listModel.add(modelS);
+					scheduleList.add(new ScheduleModel("Day 1", obj
+							.getString("start"), obj.getString("end"), obj
+							.getString("name"), obj.getString("desc")));
 				}
-				adapter = new AdapterSchedule();
-				adapter.setItems(listModel);
+				adapter = new AdapterSchedule(getActivity()
+						.getApplicationContext(), scheduleList);
+				lvSchedule.setAdapter(adapter);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

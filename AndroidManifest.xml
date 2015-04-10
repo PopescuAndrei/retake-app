@@ -78,7 +78,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.retake.retakeapp.main.TeamDetails"
+            android:name="com.retake.retakeapp.tournaments.TeamDetails"
             android:label="@string/title_activity_team_details" >
         </activity>
     </application>
