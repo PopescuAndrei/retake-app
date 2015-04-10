@@ -1,6 +1,7 @@
 package com.retake.retakeapp.map;
 
 import android.os.Bundle;
+import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,14 +34,26 @@ public class FragmentMap extends BaseFragment implements
 	Marker BigMarker;
 	MarkerOptions BigMarkerOptions;
 	GroundOverlay GO;
+	static View v;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_map, container,
-				false);
 
-		return rootView;
+		if (v != null) {
+			ViewGroup parent = (ViewGroup) v.getParent();
+			if (parent != null) {
+				parent.removeView(v);
+
+			}
+
+		}
+		try {
+			v = inflater.inflate(R.layout.fragment_map, container, false);
+		} catch (InflateException e) {
+		}
+
+		return v;
 	}
 
 	@Override
@@ -55,7 +68,7 @@ public class FragmentMap extends BaseFragment implements
 				zoomOnEvent();
 
 			}
-		});               
+		});
 
 		setUpMapIfNeeded();
 	}
@@ -83,24 +96,23 @@ public class FragmentMap extends BaseFragment implements
 				.visible(true);
 		MarkerOptions RetakeMarker = new MarkerOptions()
 				.position(new LatLng(44.405249, 26.109954)).title("Retake")
-				.snippet("We are ready to take over the world!")
-				.visible(true)
+				.snippet("We are ready to take over the world!").visible(true)
 				.icon(BitmapDescriptorFactory.fromResource(R.drawable.pins));
-//		BigMarkerOptions = new MarkerOptions()
-//				.position(polivalentaEntry)      
-//				.title("Retake")              
-//				.snippet("We are ready to take over the world!")
-//				.icon(BitmapDescriptorFactory
-//						.fromResource(R.drawable.dreamhackopen));
+		// BigMarkerOptions = new MarkerOptions()
+		// .position(polivalentaEntry)
+		// .title("Retake")
+		// .snippet("We are ready to take over the world!")
+		// .icon(BitmapDescriptorFactory
+		// .fromResource(R.drawable.dreamhackopen));
 
 		mMap.addMarker(EntryMarker);
 		mMap.addMarker(RetakeMarker);
-//		if (position.zoom <= 17f && BigMarker == null) {
-//			BigMarker = mMap.addMarker(BigMarkerOptions);
-//		} else {
-//			if (BigMarker != null)
-//				BigMarker.remove();
-//		}
+		// if (position.zoom <= 17f && BigMarker == null) {
+		// BigMarker = mMap.addMarker(BigMarkerOptions);
+		// } else {
+		// if (BigMarker != null)
+		// BigMarker.remove();
+		// }
 	}
 
 	private void setUpMap() {
@@ -122,12 +134,10 @@ public class FragmentMap extends BaseFragment implements
 		LatLng polivalentaMid = new LatLng(44.405383, 26.110211);
 
 		GroundOverlayOptions polivalentaMap = new GroundOverlayOptions()
-				.image(BitmapDescriptorFactory
-						.fromResource(R.drawable.floor3))
-				.position(polivalentaMid, 113f)
-				.bearing(-56);
-		
-//		GO.remove();
+				.image(BitmapDescriptorFactory.fromResource(R.drawable.floor3))
+				.position(polivalentaMid, 113f).bearing(-56);
+
+		// GO.remove();
 		GO = mMap.addGroundOverlay(polivalentaMap);
 
 		CameraUpdate upd = CameraUpdateFactory.newLatLngZoom(polivalentaEntry,
@@ -176,13 +186,6 @@ public class FragmentMap extends BaseFragment implements
 	public void onConnectionSuspended(int arg0) {
 		// TODO Auto-generated method stub
 
-	}
-
-	@Override
-	public void onPause() {
-		// TODO Auto-generated method stub
-		super.onPause();
-		// mMap = null;
 	}
 
 	@Override
