@@ -16,6 +16,15 @@ public class ScheduleModel {
 		this.name = name;
 		this.description = description;
 	}
+	
+	public ScheduleModel(String Title) {
+		super();
+		this.day = "";
+		this.start = "";
+		this.end = "";
+		this.name = Title;
+		this.description = "";
+	}
 
 	public ScheduleModel() {
 		// TODO Auto-generated constructor stub
