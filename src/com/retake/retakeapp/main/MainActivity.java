@@ -21,9 +21,10 @@ import android.widget.Toast;
 import com.example.retakeapp.R;
 import com.onyxbeacon.OnyxBeaconApplication;
 import com.onyxbeacon.OnyxBeaconManager;
-import com.onyxbeacon.couponbeacondemo7.fragments.BeaconFragment;
-import com.onyxbeacon.couponbeacondemo7.logging.LogDialogFragment;
-import com.onyxbeacon.couponbeacondemo7.logging.MyLogger;
+import com.retake.retakeapp.beacon.fragments.BeaconFragment;
+import com.retake.retakeapp.beacon.fragments.CouponFragment;
+import com.retake.retakeapp.beacon.logging.LogDialogFragment;
+import com.retake.retakeapp.beacon.logging.MyLogger;
 import com.retake.retakeapp.map.FragmentMap;
 import com.retake.retakeapp.notifications.NotificationFragment;
 import com.retake.retakeapp.schedule.ScheduleFragment;
@@ -57,11 +58,11 @@ public class MainActivity extends FragmentActivity implements
 	private TournamentsFragment fragmentTournaments;
 	private HomeFragment fragmentHome;
 	private BeaconFragment fragmentBeacon;
+	private CouponFragment fragmentCoupon;
 
 	public static final String LOGGER_KEY = "LoggerKey";
 	private MyLogger mLogger;
 	public static final String EXTRA_COUPONS = "coupons";
-	private BeaconFragment beaconFragment;
 	private OnyxBeaconManager mManager;
 
 	@Override
@@ -158,7 +159,7 @@ public class MainActivity extends FragmentActivity implements
 		// Enable beacons and coupons retrieval
 		mManager.setCouponEnabled(true);
 		mManager.setAPIContentEnabled(true);
-		mManager.setLogger(mLogger);
+//		mManager.setLogger(mLogger);
 
 	}
 
@@ -224,7 +225,7 @@ public class MainActivity extends FragmentActivity implements
 			launchAchievements(2);
 			break;
 		case 3:
-			launchBeacons(3);
+			launchCoupons(3);
 			break;
 		case 4:
 			launchSchedule(4);
@@ -480,9 +481,10 @@ public class MainActivity extends FragmentActivity implements
 
 		}
 	}
-	public void launchBeacons(int position) {
-		if (fragmentBeacon == null) {
-			fragmentBeacon = new BeaconFragment();
+
+	public void launchCoupons(int position) {
+		if (fragmentCoupon == null) {
+			fragmentCoupon = new CouponFragment();
 		}
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
 				.beginTransaction();
@@ -493,16 +495,16 @@ public class MainActivity extends FragmentActivity implements
 		mDrawerList.setSelection(position);
 		setTitle(navMenuTitles[position]);
 		mDrawerLayout.closeDrawer(mDrawerList);
-		if (currentFrag != fragmentBeacon) {
+		if (currentFrag != fragmentCoupon) {
 
 			if (currentFrag != null) {
 				transaction.remove(currentFrag);
 			}
 
-			if (!fragmentBeacon.isAdded()) {
-				transaction.add(R.id.frame_container, fragmentBeacon);
-			} else { 
-				transaction.show(fragmentBeacon);
+			if (!fragmentCoupon.isAdded()) {
+				transaction.add(R.id.frame_container, fragmentCoupon);
+			} else {
+				transaction.show(fragmentCoupon);
 			}
 
 			transaction.addToBackStack(null);
@@ -510,6 +512,7 @@ public class MainActivity extends FragmentActivity implements
 
 		}
 	}
+
 	public void onDialogPositiveClick(DialogFragment dialog) {
 		EditText logName = (EditText) dialog.getDialog().findViewById(
 				R.id.logName);
@@ -531,7 +534,7 @@ public class MainActivity extends FragmentActivity implements
 					.show();
 		}
 	}
-	
+
 	@Override
 	public void onPause() {
 		super.onPause();
@@ -542,6 +545,5 @@ public class MainActivity extends FragmentActivity implements
 	public MyLogger getLogger() {
 		return mLogger;
 	}
-	
-	
+
 }

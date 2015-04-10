@@ -17,7 +17,7 @@
         <meta-data android:name="clientid" android:value="daf8a02a87752a95bec465280cb669ae226627d2"/>
         <meta-data android:name="secret" android:value="728de17b93eba704848a88f1fcb8f6e193c70b1f"/>
 
-        <receiver android:name="package.name.CouponReceiver">
+        <receiver android:name="com.retake.retakeapp.receivers.CouponReceiver">
             <intent-filter>
                 <action android:name="com.retake.retakeapp.coupons"/>
             </intent-filter>
