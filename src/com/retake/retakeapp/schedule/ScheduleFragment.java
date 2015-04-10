@@ -24,6 +24,7 @@ import com.retake.retakeapp.base.BaseFragment;
 import com.retake.retakeapp.base.BaseModel;
 import com.retake.retakeapp.base.ModelFailureResponse;
 import com.retake.retakeapp.base.ModelOfflineData;
+import com.retake.retakeapp.main.MainActivity;
 
 public class ScheduleFragment extends BaseFragment {
 	private ListView lvSchedule;
@@ -123,7 +124,11 @@ public class ScheduleFragment extends BaseFragment {
 
 	@Override
 	protected void onAfterStart() {
-		api.getSchedule();
+		if (((MainActivity) getActivity()).checkInternet() == true) {
+			showConnectionError();
+			api.getSchedule();
+		} else
+			api.getOfflineSchedule();
 	}
 
 	@Override

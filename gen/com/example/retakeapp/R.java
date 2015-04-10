@@ -13,6 +13,8 @@ public final class R {
         /**  Nav Drawer Menu Items 
          */
         public static final int nav_drawer_items=0x7f0b0000;
+        public static final int ticons=0x7f0b0003;
+        public static final int tournaments=0x7f0b0002;
     }
     public static final class attr {
         /** 
@@ -526,43 +528,50 @@ containing a value of this type.
         public static final int floorplan=0x7f020023;
         public static final int ic_achievements=0x7f020024;
         public static final int ic_banner=0x7f020025;
-        public static final int ic_drawer=0x7f020026;
-        public static final int ic_home=0x7f020027;
-        public static final int ic_launcher=0x7f020028;
-        public static final int ic_map=0x7f020029;
-        public static final int ic_notif=0x7f02002a;
-        public static final int ic_plusone_medium_off_client=0x7f02002b;
-        public static final int ic_plusone_small_off_client=0x7f02002c;
-        public static final int ic_plusone_standard_off_client=0x7f02002d;
-        public static final int ic_plusone_tall_off_client=0x7f02002e;
-        public static final int ic_schedule=0x7f02002f;
-        public static final int ic_streaming=0x7f020030;
-        public static final int ic_tournaments=0x7f020031;
-        public static final int ladder=0x7f020032;
-        public static final int list_item_bg_normal=0x7f020033;
-        public static final int list_item_bg_pressed=0x7f020034;
-        public static final int list_selector=0x7f020035;
-        public static final int mapbutton=0x7f020036;
-        public static final int phototeam=0x7f020037;
-        public static final int pins=0x7f020038;
-        public static final int powered_by_google_dark=0x7f020039;
-        public static final int powered_by_google_light=0x7f02003a;
-        public static final int splashtemp=0x7f02003b;
-        public static final int sporti=0x7f02003c;
+        public static final int ic_csgo=0x7f020026;
+        public static final int ic_dota=0x7f020027;
+        public static final int ic_drawer=0x7f020028;
+        public static final int ic_hearthstone=0x7f020029;
+        public static final int ic_home=0x7f02002a;
+        public static final int ic_hos=0x7f02002b;
+        public static final int ic_launcher=0x7f02002c;
+        public static final int ic_lol=0x7f02002d;
+        public static final int ic_lotr=0x7f02002e;
+        public static final int ic_map=0x7f02002f;
+        public static final int ic_minecraft=0x7f020030;
+        public static final int ic_notif=0x7f020031;
+        public static final int ic_plusone_medium_off_client=0x7f020032;
+        public static final int ic_plusone_small_off_client=0x7f020033;
+        public static final int ic_plusone_standard_off_client=0x7f020034;
+        public static final int ic_plusone_tall_off_client=0x7f020035;
+        public static final int ic_schedule=0x7f020036;
+        public static final int ic_streaming=0x7f020037;
+        public static final int ic_tournaments=0x7f020038;
+        public static final int ladder=0x7f020039;
+        public static final int list_item_bg_normal=0x7f02003a;
+        public static final int list_item_bg_pressed=0x7f02003b;
+        public static final int list_selector=0x7f02003c;
+        public static final int mapbutton=0x7f02003d;
+        public static final int phototeam=0x7f02003e;
+        public static final int pins=0x7f02003f;
+        public static final int powered_by_google_dark=0x7f020040;
+        public static final int powered_by_google_light=0x7f020041;
+        public static final int splashtemp=0x7f020042;
+        public static final int sporti=0x7f020043;
     }
     public static final class id {
         public static final int adjust_height=0x7f0d0000;
         public static final int adjust_width=0x7f0d0001;
-        public static final int area1=0x7f0d004b;
-        public static final int area2=0x7f0d004c;
-        public static final int area3=0x7f0d004d;
-        public static final int area4=0x7f0d004e;
-        public static final int area5=0x7f0d004f;
+        public static final int area1=0x7f0d0050;
+        public static final int area2=0x7f0d0051;
+        public static final int area3=0x7f0d0052;
+        public static final int area4=0x7f0d0053;
+        public static final int area5=0x7f0d0054;
         public static final int authButton=0x7f0d0029;
-        public static final int beacon_name=0x7f0d003e;
+        public static final int beacon_name=0x7f0d003f;
         public static final int book_now=0x7f0d0010;
         public static final int btnAchievementsHome=0x7f0d0030;
-        public static final int btnFirstTeam=0x7f0d003d;
+        public static final int btnFirstTeam=0x7f0d003e;
         public static final int btnMapHome=0x7f0d002f;
         public static final int btnNotificationsHome=0x7f0d0031;
         public static final int btnScheduleHome=0x7f0d0033;
@@ -575,10 +584,10 @@ containing a value of this type.
         public static final int classic=0x7f0d0014;
         public static final int counter=0x7f0d002d;
         public static final int couponList=0x7f0d0028;
-        public static final int coupon_desc=0x7f0d0041;
-        public static final int coupon_imageview=0x7f0d003f;
-        public static final int coupon_name=0x7f0d0040;
-        public static final int delete_btn=0x7f0d0042;
+        public static final int coupon_desc=0x7f0d0042;
+        public static final int coupon_imageview=0x7f0d0040;
+        public static final int coupon_name=0x7f0d0041;
+        public static final int delete_btn=0x7f0d0043;
         public static final int donate_with_google=0x7f0d0013;
         public static final int drawer_layout=0x7f0d0018;
         public static final int frame_container=0x7f0d0019;
@@ -589,6 +598,7 @@ containing a value of this type.
         public static final int icon=0x7f0d002b;
         public static final int imageView1=0x7f0d001f;
         public static final int ivMember=0x7f0d0021;
+        public static final int iv_tournament_logo=0x7f0d004d;
         public static final int list_slidermenu=0x7f0d001a;
         public static final int loaded_content=0x7f0d001e;
         public static final int loading=0x7f0d0020;
@@ -597,6 +607,7 @@ containing a value of this type.
         public static final int lvNotification=0x7f0d0038;
         public static final int lvSchedule=0x7f0d0039;
         public static final int lvStreaming=0x7f0d003b;
+        public static final int lvTournamentsList=0x7f0d003c;
         public static final int map=0x7f0d0036;
         public static final int map_container=0x7f0d0035;
         public static final int match_parent=0x7f0d000e;
@@ -609,27 +620,30 @@ containing a value of this type.
         public static final int selectionDetails=0x7f0d000d;
         public static final int slide=0x7f0d0017;
         public static final int strict_sandbox=0x7f0d000b;
-        public static final int svHorizontal=0x7f0d003c;
+        public static final int svHorizontal=0x7f0d003d;
         public static final int terrain=0x7f0d0006;
         public static final int title=0x7f0d002c;
+        public static final int tournament_item=0x7f0d004c;
         public static final int tvCountry=0x7f0d0024;
-        public static final int tvDay=0x7f0d0048;
+        public static final int tvDay=0x7f0d0049;
         public static final int tvDescriptionDetails=0x7f0d001d;
-        public static final int tvEventName=0x7f0d0049;
+        public static final int tvEventName=0x7f0d004a;
         public static final int tvEventNameDetails=0x7f0d001b;
         public static final int tvEventTimeDetails=0x7f0d001c;
-        public static final int tvFrom=0x7f0d0045;
+        public static final int tvFrom=0x7f0d0046;
         public static final int tvJoined=0x7f0d0026;
         public static final int tvMember=0x7f0d0022;
-        public static final int tvMinus=0x7f0d0046;
-        public static final int tvNotificationMessage=0x7f0d0044;
-        public static final int tvNotificationTitle=0x7f0d0043;
+        public static final int tvMinus=0x7f0d0047;
+        public static final int tvNotificationMessage=0x7f0d0045;
+        public static final int tvNotificationTitle=0x7f0d0044;
         public static final int tvResults=0x7f0d0027;
         public static final int tvRole=0x7f0d0025;
-        public static final int tvStreamingLink=0x7f0d004a;
+        public static final int tvStreamingLink=0x7f0d004b;
         public static final int tvTeamTitle=0x7f0d0023;
-        public static final int tvTo=0x7f0d0047;
+        public static final int tvTo=0x7f0d0048;
+        public static final int tv_tournament_name=0x7f0d004e;
         public static final int txtLabel=0x7f0d002e;
+        public static final int view_gray_line=0x7f0d004f;
         public static final int wrap_content=0x7f0d000f;
     }
     public static final class integer {
@@ -651,12 +665,14 @@ containing a value of this type.
         public static final int fragment_schedule=0x7f03000c;
         public static final int fragment_settings=0x7f03000d;
         public static final int fragment_streaming=0x7f03000e;
-        public static final int fragment_tournaments=0x7f03000f;
-        public static final int item_beacon=0x7f030010;
-        public static final int item_coupon=0x7f030011;
-        public static final int notification_item=0x7f030012;
-        public static final int schedule_item=0x7f030013;
-        public static final int streaming_item=0x7f030014;
+        public static final int fragment_tournament_list=0x7f03000f;
+        public static final int fragment_tournaments=0x7f030010;
+        public static final int item_beacon=0x7f030011;
+        public static final int item_coupon=0x7f030012;
+        public static final int notification_item=0x7f030013;
+        public static final int schedule_item=0x7f030014;
+        public static final int streaming_item=0x7f030015;
+        public static final int tournament_item=0x7f030016;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;

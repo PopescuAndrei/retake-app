@@ -38,6 +38,26 @@
         <item>@drawable/ic_streaming</item>
     </array>
 
+    <string-array name="tournaments">
+        <item>PGL CS:GO Championship Series Kick-off Season</item>
+        <item>StarLadder StarSeries XII – Dota 2</item>
+        <item>PGL Cupa Facultăților – Hearhtstone</item>
+        <item>PGL Cupa Liceelor – League of Legends</item>
+        <item>PGL Cupa Școlilor – Minecraft</item>
+        <item>PGL Spring Champions of the Storm 2015</item>
+        <item>PGL Spring Legends of the Rift 2015</item>
+        <item>PGL Spring Tavern Tales 2015</item>
+    </string-array>
+
+    <array name="ticons">
+        <item>@drawable/ic_csgo</item>
+        <item>@drawable/ic_dota</item>
+        <item>@drawable/ic_hearthstone</item>
+        <item>@drawable/ic_lol</item>
+        <item>@drawable/ic_minecraft</item>
+        <item>@drawable/ic_lotr</item>
+        <item>@drawable/ic_hearthstone</item>
+    </array>
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
     <string name="title_activity_schedule_details">ScheduleDetails</string>

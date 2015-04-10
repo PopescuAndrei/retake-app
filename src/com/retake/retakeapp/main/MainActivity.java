@@ -4,8 +4,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
@@ -32,6 +35,7 @@ import com.retake.retakeapp.notifications.NotificationFragment;
 import com.retake.retakeapp.schedule.ScheduleFragment;
 import com.retake.retakeapp.streaming.StreamingFragment;
 import com.retake.retakeapp.tournaments.TournamentsFragment;
+import com.retake.retakeapp.tournaments.TournamentsListFragment;
 
 @SuppressWarnings("deprecation")
 public class MainActivity extends FragmentActivity implements
@@ -58,7 +62,7 @@ public class MainActivity extends FragmentActivity implements
 	private StreamingFragment fragmentStreaming;
 	private NotificationFragment fragmentNotification;
 	private AchievementsFragment fragmentAchievements;
-	private TournamentsFragment fragmentTournaments;
+	private TournamentsListFragment fragmentTournaments;
 	private HomeFragment fragmentHome;
 	private BeaconFragment fragmentBeacon;
 	private CouponFragment fragmentCoupon;
@@ -424,7 +428,7 @@ public class MainActivity extends FragmentActivity implements
 
 	public void launchTournaments(int position) {
 		if (fragmentTournaments == null) {
-			fragmentTournaments = new TournamentsFragment();
+			fragmentTournaments = new TournamentsListFragment();
 		}
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
 				.beginTransaction();
@@ -548,4 +552,13 @@ public class MainActivity extends FragmentActivity implements
 		return mLogger;
 	}
 
+	/** check for internet connection */
+	public boolean checkInternet() {
+		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo ni = cm.getActiveNetworkInfo();
+		if (ni == null) {
+			return false;
+		} else
+			return true;
+	}
 }

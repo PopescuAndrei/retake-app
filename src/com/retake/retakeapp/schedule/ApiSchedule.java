@@ -24,7 +24,10 @@ public class ApiSchedule extends BaseApiInterface {
 
 	public void getSchedule() {
 		asyncTask = (JSONParse) new JSONParse().execute();
-		// onGetSchedule(null, "", 0);
+	}
+
+	public void getOfflineSchedule() {
+		onGetSchedule(null, "", 0);
 	}
 
 	private class JSONParse extends AsyncTask<String, String, JSONObject> {

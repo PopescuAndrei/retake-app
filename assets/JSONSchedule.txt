@@ -1,1 +1,299 @@
-{"seq":0,"orar":{"day3":[{"name":"dinfisier","desc":"desc1","start":"00:00","end":"12:00"},{"name":"asda","desc":"acvc","start":"12:00","end":"15:00"}],"day2":[{"name":"name1","desc":"desc1","start":"00:00","end":"12:00"},{"name":"asda","desc":"acvc","start":"12:00","end":"15:00"}],"day1":[{"name":"name1","desc":"desc1","start":"00:00","end":"12:00"},{"name":"asda","desc":"acvc","start":"12:00","end":"15:00"}]}}
+{
+   "seq":0,
+   "orar":{
+      "day3":[
+         {
+            "name":"Hearthstone",
+            "desc":"Sferturi de finala",
+            "start":"10:00",
+            "end":"16:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"League of Legends",
+            "start":"11:00",
+            "end":"12:30"
+         },
+         {
+            "name":"Heroes of the Storm",
+            "desc":"Loser bracket-meci 2",
+            "start":"11:00",
+            "end":"13:30"
+         },
+         {
+            "name":"League of Legends",
+            "desc":"Marea finala",
+            "start":"11:00",
+            "end":"14:00"
+         },
+         {
+            "name":"Scena PGL",
+            "desc":"Spring Legends of the Rift-Marea finala",
+            "start":"11:00",
+            "end":"14:00"
+         },
+         {
+            "name":"Scena StarLadder-Dota 2",
+            "desc":"Ziua #3",
+            "start":"11:00",
+            "end":"22:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"League of Legends",
+            "start":"12:30",
+            "end":"14:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"Minecraft",
+            "start":"14:00",
+            "end":"15:30"
+         },
+         {
+            "name":"Scena PGL",
+            "desc":"Spring Champions of the Storm-Marea finala",
+            "start":"14:00",
+            "end":"17:00"
+         },
+         {
+            "name":"Heroes of the storm",
+            "desc":"Marea finala-scena PGL",
+            "start":"14:30",
+            "end":"17:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"CS:GO",
+            "start":"15:30",
+            "end":"17:00"
+         },
+         {
+            "name":"Hearthstone",
+            "desc":"Semifinala",
+            "start":"16:00",
+            "end":"20:00"
+         },
+         {
+            "name":"Scena PGL",
+            "desc":"Cosplay",
+            "start":"17:00",
+            "end":"18:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"Dota 2",
+            "start":"17:00",
+            "end":"18:30"
+         },
+         {
+            "name":"Scena PGL",
+            "desc":"CS:GO Championship Series-Marea finala",
+            "start":"18:00",
+            "end":"22:00"
+         },
+         {
+            "name":"Hearthstone",
+            "desc":"Marea finala",
+            "start":"20:00",
+            "end":"21:30"
+         }
+      ],
+      "day2":[
+         {
+            "name":"Scena PGL",
+            "desc":"Cosplay",
+            "start":"11:00",
+            "end":"12:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"League of Legends",
+            "start":"11:00",
+            "end":"12:30"
+         },
+         {
+            "name":"Heroes of the Storm",
+            "desc":"Semifinala #1",
+            "start":"11:00",
+            "end":"13:30"
+         },
+         {
+            "name":"League of Legends",
+            "desc":"Semifinala #1",
+            "start":"11:00",
+            "end":"14:00"
+         },
+         {
+            "name":"Scena StarLadder-Dota 2",
+            "desc":"Ziua #2",
+            "start":"11:00",
+            "end":"22:00"
+         },
+         {
+            "name":"Scena PGL",
+            "desc":"CS:GO Championship Series-Meci 3",
+            "start":"12:00",
+            "end":"15:00"
+         },
+         {
+            "name":"Hearthstone",
+            "desc":"Saisprezecimi(RO16)",
+            "start":"12:00",
+            "end":"22:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"Minecraft",
+            "start":"12:30",
+            "end":"14:00"
+         },
+         {
+            "name":"Heroes of the Storm",
+            "desc":"Semifinala #2",
+            "start":"13:30",
+            "end":"16:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"League of Legends",
+            "start":"14:00",
+            "end":"15:30"
+         },
+         {
+            "name":"League of Legends",
+            "desc":"Semifinala #2",
+            "start":"14:00",
+            "end":"17:00"
+         },
+         {
+            "name":"Scena PGL",
+            "desc":"CS:GO Championship Series-Meci 4",
+            "start":"15:00",
+            "end":"18:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"League of Legends",
+            "start":"15:30",
+            "end":"17:00"
+         },
+         {
+            "name":"Heroes of the Storm",
+            "desc":"Winner bracket-Finala",
+            "start":"16:30",
+            "end":"19:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"CS:GO",
+            "start":"17:00",
+            "end":"18:30"
+         },
+         {
+            "name":"League of Legends",
+            "desc":"Finala mica",
+            "start":"17:00",
+            "end":"20:00"
+         },
+         {
+            "name":"Scena PGL",
+            "desc":"Cosplay",
+            "start":"18:00",
+            "end":"19:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"Dota 2",
+            "start":"18:30",
+            "end":"20:00"
+         },
+         {
+            "name":"Heroes of the Storm",
+            "desc":"Loser bracket-meci 1",
+            "start":"19:00",
+            "end":"21:30"
+         },
+         {
+            "name":"Scena PGL",
+            "desc":"CS:GO Championship Series-Meci 5",
+            "start":"19:00",
+            "end":"22:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"Dota 2",
+            "start":"20:00",
+            "end":"21:30"
+         }
+      ],
+      "day1":[
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"League of Legends",
+            "start":"12:00",
+            "end":"13:30"
+         },
+         {
+            "name":"Scena PGL",
+            "desc":"PGL Spring Tavern Tales-HearthStone",
+            "start":"12:00",
+            "end":"16:00"
+         },
+         {
+            "name":"Hearthstone",
+            "desc":"Faza grupelor",
+            "start":"12:00",
+            "end":"22:00"
+         },
+         {
+            "name":"League of Legends",
+            "desc":"Faza grupelor",
+            "start":"12:00",
+            "end":"22:00"
+         },
+         {
+            "name":"Scena StarLadder-Dota 2",
+            "desc":"Ziua #1",
+            "start":"12:00",
+            "end":"22:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"League of Legends",
+            "start":"13:30",
+            "end":"15:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"Minecraft",
+            "start":"15:00",
+            "end":"16:30"
+         },
+         {
+            "name":"Scena PGL",
+            "desc":"CS:GO Championship Series-Fnatic vs Team SoloMid-Best of 3",
+            "start":"16:00",
+            "end":"19:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"CS:GO",
+            "start":"16:30",
+            "end":"18:00"
+         },
+         {
+            "name":"PGL 1v1 Arena",
+            "desc":"Dota2",
+            "start":"18:00",
+            "end":"19:30"
+         },
+         {
+            "name":"Scena PGL",
+            "desc":"CS:GO Championship Series- Team Envy vs Ninjas in Pyjamas",
+            "start":"19:00",
+            "end":"22:00"
+         }
+      ]
+   }
+   }
