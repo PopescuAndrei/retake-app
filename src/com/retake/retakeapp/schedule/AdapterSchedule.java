@@ -80,8 +80,6 @@ public class AdapterSchedule extends BaseAdapter {
 			viewHolder.tvTo = (TextView) convertView.findViewById(R.id.tvTo);
 			viewHolder.tvEventName = (TextView) convertView
 					.findViewById(R.id.tvEventName);
-			viewHolder.tvEventLocation = (TextView) convertView
-					.findViewById(R.id.tvEventLocation);
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (Holder) convertView.getTag();
@@ -89,8 +87,6 @@ public class AdapterSchedule extends BaseAdapter {
 		if (position < scheduleList.size()) {
 			viewHolder.tvEventName
 					.setText(scheduleList.get(position).getName());
-			viewHolder.tvEventLocation.setText(scheduleList.get(position)
-					.getLocation());
 			viewHolder.tvFrom.setText(scheduleList.get(position).getStart());
 			viewHolder.tvTo.setText(scheduleList.get(position).getEnd());
 		}
@@ -98,6 +94,6 @@ public class AdapterSchedule extends BaseAdapter {
 	}
 
 	public static class Holder {
-		TextView tvFrom, tvTo, tvEventName, tvEventLocation;
+		TextView tvFrom, tvTo, tvEventName;
 	}
 }

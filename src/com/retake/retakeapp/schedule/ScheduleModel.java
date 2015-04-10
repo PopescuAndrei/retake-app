@@ -5,17 +5,20 @@ public class ScheduleModel {
 	private String start;
 	private String end;
 	private String name;
-	private String location;
 	private String description;
 
-	public ScheduleModel(String day, String start, String end, String name,String location,String description) {
+	public ScheduleModel(String day, String start, String end, String name,
+			String description) {
 		super();
 		this.day = day;
 		this.start = start;
 		this.end = end;
 		this.name = name;
-		this.location = location;
 		this.description = description;
+	}
+
+	public ScheduleModel() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getDay() {
@@ -50,14 +53,6 @@ public class ScheduleModel {
 		this.name = name;
 	}
 
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
 	public String getDescription() {
 		return description;
 	}
@@ -66,5 +61,4 @@ public class ScheduleModel {
 		this.description = description;
 	}
 
-	
 }
