@@ -77,9 +77,6 @@ public class ApiSchedule extends BaseApiInterface {
 								.getString("start"), obj.getString("end"), obj
 								.getString("name"), obj.getString("desc")));
 					}
-					for (ScheduleModel sm : scheduleList) {
-						Log.w("sdfasfsafSA", sm.toString());
-					}
 					onGetSchedule(scheduleList, "", 1);
 				} else {
 					onGetSchedule(null, "no update", 0);
