@@ -125,10 +125,11 @@ public class ScheduleFragment extends BaseFragment {
 	@Override
 	protected void onAfterStart() {
 		if (((MainActivity) getActivity()).checkInternet() == true) {
-			showConnectionError();
 			api.getSchedule();
-		} else
+		} else {
+			showConnectionError();
 			api.getOfflineSchedule();
+		}
 	}
 
 	@Override

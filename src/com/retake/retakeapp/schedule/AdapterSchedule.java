@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
-import android.graphics.Bitmap;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.retakeapp.R;
@@ -70,33 +69,44 @@ public class AdapterSchedule extends BaseAdapter {
 
 		Holder viewHolder = new Holder();
 
-		if (convertView == null) {
-			LayoutInflater inflater = (LayoutInflater) context
-					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			convertView = inflater.inflate(R.layout.schedule_item, null);
-
-			viewHolder.tvFrom = (TextView) convertView
-					.findViewById(R.id.tvFrom);
-			viewHolder.tvTo = (TextView) convertView.findViewById(R.id.tvTo);
-			viewHolder.tvEventName = (TextView) convertView
-					.findViewById(R.id.tvEventName);
-			viewHolder.tvDay = (TextView) convertView.findViewById(R.id.tvDay);
-			convertView.setTag(viewHolder);
-		} else {
-			viewHolder = (Holder) convertView.getTag();
-		}
+		LayoutInflater inflater = (LayoutInflater) context
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		convertView = inflater.inflate(R.layout.schedule_item, null);
+		viewHolder.main = (LinearLayout) convertView
+				.findViewById(R.id.mainLayoutSchedule);
+		viewHolder.tvFrom = (TextView) convertView.findViewById(R.id.tvFrom);
+		viewHolder.tvTo = (TextView) convertView.findViewById(R.id.tvTo);
+		viewHolder.tvEventName = (TextView) convertView
+				.findViewById(R.id.tvEventName);
+		viewHolder.tvDash = (TextView) convertView.findViewById(R.id.tvDash);
+		viewHolder.tvDay = (TextView) convertView.findViewById(R.id.tvDay);
+		convertView.setTag(viewHolder);
 		if (position < scheduleList.size()) {
-			viewHolder.tvEventName
-					.setText(scheduleList.get(position).getName());
-			viewHolder.tvFrom.setText(scheduleList.get(position).getStart());
-			viewHolder.tvTo.setText(scheduleList.get(position).getEnd());
-			viewHolder.tvDay.setText(scheduleList.get(position).getDay());
+			ScheduleModel sm = scheduleList.get(position);
+			viewHolder.tvEventName.setText(sm.getName());
+			if (sm.getName().equals("Friday")
+					|| sm.getName().equals("Saturday")
+					|| sm.getName().equals("Sunday")) {
+				viewHolder.tvFrom.setText("");
+				viewHolder.tvTo.setText("");
+				viewHolder.tvDash.setText("");
+				viewHolder.main.setBackgroundResource(R.color.retakeCyan);
+				viewHolder.tvEventName.setTextColor(context.getResources()
+						.getColor(R.color.white));
+				viewHolder.tvEventName.setGravity(Gravity.CENTER);
+				viewHolder.tvDay.setText("");
+			} else {
+				viewHolder.tvFrom.setText(sm.getStart());
+				viewHolder.tvTo.setText(sm.getEnd());
+				viewHolder.tvDay.setText(sm.getDay());
+			}
 		}
 		return convertView;
 	}
 
 	public static class Holder {
-		TextView tvFrom, tvTo, tvEventName, tvDay;
+		TextView tvFrom, tvTo, tvEventName, tvDay, tvDash;
+		LinearLayout main;
 	}
 
 }

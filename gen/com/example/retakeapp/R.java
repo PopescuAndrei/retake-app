@@ -447,8 +447,8 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f080006;
         public static final int common_signin_btn_light_text_focused=0x7f080007;
         public static final int common_signin_btn_light_text_pressed=0x7f080005;
-        public static final int common_signin_btn_text_dark=0x7f080020;
-        public static final int common_signin_btn_text_light=0x7f080021;
+        public static final int common_signin_btn_text_dark=0x7f080021;
+        public static final int common_signin_btn_text_light=0x7f080022;
         public static final int counter_text_bg=0x7f08001b;
         public static final int counter_text_color=0x7f08001c;
         public static final int list_background=0x7f080018;
@@ -475,8 +475,9 @@ containing a value of this type.
         public static final int wallet_hint_foreground_holo_light=0x7f080011;
         public static final int wallet_holo_blue_light=0x7f080015;
         public static final int wallet_link_text_light=0x7f080016;
-        public static final int wallet_primary_text_holo_light=0x7f080022;
-        public static final int wallet_secondary_text_holo_dark=0x7f080023;
+        public static final int wallet_primary_text_holo_light=0x7f080023;
+        public static final int wallet_secondary_text_holo_dark=0x7f080024;
+        public static final int white=0x7f080020;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -562,11 +563,11 @@ containing a value of this type.
     public static final class id {
         public static final int adjust_height=0x7f0d0000;
         public static final int adjust_width=0x7f0d0001;
-        public static final int area1=0x7f0d0050;
-        public static final int area2=0x7f0d0051;
-        public static final int area3=0x7f0d0052;
-        public static final int area4=0x7f0d0053;
-        public static final int area5=0x7f0d0054;
+        public static final int area1=0x7f0d0051;
+        public static final int area2=0x7f0d0052;
+        public static final int area3=0x7f0d0053;
+        public static final int area4=0x7f0d0054;
+        public static final int area5=0x7f0d0055;
         public static final int authButton=0x7f0d0029;
         public static final int beacon_name=0x7f0d003f;
         public static final int book_now=0x7f0d0010;
@@ -598,7 +599,7 @@ containing a value of this type.
         public static final int icon=0x7f0d002b;
         public static final int imageView1=0x7f0d001f;
         public static final int ivMember=0x7f0d0021;
-        public static final int iv_tournament_logo=0x7f0d004d;
+        public static final int iv_tournament_logo=0x7f0d004e;
         public static final int list_slidermenu=0x7f0d001a;
         public static final int loaded_content=0x7f0d001e;
         public static final int loading=0x7f0d0020;
@@ -608,6 +609,7 @@ containing a value of this type.
         public static final int lvSchedule=0x7f0d0039;
         public static final int lvStreaming=0x7f0d003b;
         public static final int lvTournamentsList=0x7f0d003c;
+        public static final int mainLayoutSchedule=0x7f0d0046;
         public static final int map=0x7f0d0036;
         public static final int map_container=0x7f0d0035;
         public static final int match_parent=0x7f0d000e;
@@ -623,27 +625,27 @@ containing a value of this type.
         public static final int svHorizontal=0x7f0d003d;
         public static final int terrain=0x7f0d0006;
         public static final int title=0x7f0d002c;
-        public static final int tournament_item=0x7f0d004c;
+        public static final int tournament_item=0x7f0d004d;
         public static final int tvCountry=0x7f0d0024;
-        public static final int tvDay=0x7f0d0049;
+        public static final int tvDash=0x7f0d0048;
+        public static final int tvDay=0x7f0d004a;
         public static final int tvDescriptionDetails=0x7f0d001d;
-        public static final int tvEventName=0x7f0d004a;
+        public static final int tvEventName=0x7f0d004b;
         public static final int tvEventNameDetails=0x7f0d001b;
         public static final int tvEventTimeDetails=0x7f0d001c;
-        public static final int tvFrom=0x7f0d0046;
+        public static final int tvFrom=0x7f0d0047;
         public static final int tvJoined=0x7f0d0026;
         public static final int tvMember=0x7f0d0022;
-        public static final int tvMinus=0x7f0d0047;
         public static final int tvNotificationMessage=0x7f0d0045;
         public static final int tvNotificationTitle=0x7f0d0044;
         public static final int tvResults=0x7f0d0027;
         public static final int tvRole=0x7f0d0025;
-        public static final int tvStreamingLink=0x7f0d004b;
+        public static final int tvStreamingLink=0x7f0d004c;
         public static final int tvTeamTitle=0x7f0d0023;
-        public static final int tvTo=0x7f0d0048;
-        public static final int tv_tournament_name=0x7f0d004e;
+        public static final int tvTo=0x7f0d0049;
+        public static final int tv_tournament_name=0x7f0d004f;
         public static final int txtLabel=0x7f0d002e;
-        public static final int view_gray_line=0x7f0d004f;
+        public static final int view_gray_line=0x7f0d0050;
         public static final int wrap_content=0x7f0d000f;
     }
     public static final class integer {

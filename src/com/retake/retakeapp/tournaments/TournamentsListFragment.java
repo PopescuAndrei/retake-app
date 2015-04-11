@@ -45,24 +45,30 @@ public class TournamentsListFragment extends BaseFragment {
 	public void initUI(View view) {
 		lvTournamentList = (ListView) getActivity().findViewById(
 				R.id.lvTournamentsList);
-		tournamentsList.add(new TournamentModel(
-				"PGL CS:GO Championship Series Kick-off Season",
-				R.drawable.ic_csgo));
-		tournamentsList.add(new TournamentModel(
-				"StarLadder StarSeries XII – Dota 2", R.drawable.ic_dota));
-		tournamentsList.add(new TournamentModel(
-				"PGL Cupa Facultatilor – Hearhtstone",
-				R.drawable.ic_hearthstone));
-		tournamentsList.add(new TournamentModel(
-				"PGL Cupa Liceelor – League of Legends", R.drawable.ic_lol));
-		tournamentsList.add(new TournamentModel(
-				"PGL Cupa scolilor – Minecraft", R.drawable.ic_minecraft));
-		tournamentsList.add(new TournamentModel(
-				"PGL Spring Champions of the Storm 2015", R.drawable.ic_hos));
-		tournamentsList.add(new TournamentModel(
-				"PGL Spring Legends of the Rift 2015", R.drawable.ic_lotr));
-		tournamentsList.add(new TournamentModel("PGL Spring Tavern Tales 2015",
-				R.drawable.ic_hearthstone));
+		if (tournamentsList.isEmpty()) {
+			tournamentsList.add(new TournamentModel(
+					"PGL CS:GO Championship Series Kick-off Season",
+					R.drawable.ic_csgo));
+			tournamentsList.add(new TournamentModel(
+					"StarLadder StarSeries XII – Dota 2", R.drawable.ic_dota));
+			tournamentsList.add(new TournamentModel(
+					"PGL Cupa Facultatilor – Hearhtstone",
+					R.drawable.ic_hearthstone));
+			tournamentsList
+					.add(new TournamentModel(
+							"PGL Cupa Liceelor – League of Legends",
+							R.drawable.ic_lol));
+			tournamentsList.add(new TournamentModel(
+					"PGL Cupa scolilor – Minecraft", R.drawable.ic_minecraft));
+			tournamentsList
+					.add(new TournamentModel(
+							"PGL Spring Champions of the Storm 2015",
+							R.drawable.ic_hos));
+			tournamentsList.add(new TournamentModel(
+					"PGL Spring Legends of the Rift 2015", R.drawable.ic_lotr));
+			tournamentsList.add(new TournamentModel(
+					"PGL Spring Tavern Tales 2015", R.drawable.ic_hearthstone));
+		}
 		adapter = new TournamentsAdapter(getActivity().getApplicationContext(),
 				tournamentsList);
 		lvTournamentList.setAdapter(adapter);
