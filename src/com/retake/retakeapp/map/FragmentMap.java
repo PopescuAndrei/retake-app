@@ -16,6 +16,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.GroundOverlay;
@@ -23,6 +24,7 @@ import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.maps.android.clustering.ClusterManager;
 import com.retake.retakeapp.base.BaseFragment;
 import com.retake.retakeapp.base.BaseModel;
 
@@ -30,6 +32,7 @@ public class FragmentMap extends BaseFragment implements
 		GoogleApiClient.ConnectionCallbacks,
 		GoogleApiClient.OnConnectionFailedListener {
 	private GoogleMap mMap; // Might be null if Google Play services APK is not
+	private ClusterManager<CustomPinModel> mClusterManager;
 	private Button buttonTakeOnEvent;
 	Marker BigMarker;
 	MarkerOptions BigMarkerOptions;
@@ -86,6 +89,20 @@ public class FragmentMap extends BaseFragment implements
 			}
 		}
 	}
+	
+	private void setUpClusterer() {
+	    // Position the map.
+		mClusterManager = new ClusterManager<CustomPinModel>(this.getActivity(), mMap);
+        mMap.setOnCameraChangeListener(mClusterManager);
+
+        mClusterManager.addItem(new CustomPinModel(44.405383, 26.110211));
+        mClusterManager.addItem(new CustomPinModel(44.405180, 26.110692));
+        mClusterManager.addItem(new CustomPinModel(44.405249, 26.109954));
+        mClusterManager.addItem(new CustomPinModel(44.405180, 26.110672));
+        mClusterManager.addItem(new CustomPinModel(44.405239, 26.109954));
+        
+
+	}
 
 	private void setUpMarkers(CameraPosition position) {
 		LatLng polivalentaMid = new LatLng(44.405383, 26.110211);
@@ -98,25 +115,10 @@ public class FragmentMap extends BaseFragment implements
 				.position(new LatLng(44.405249, 26.109954)).title("Retake")
 				.snippet("We are ready to take over the world!").visible(true)
 				.icon(BitmapDescriptorFactory.fromResource(R.drawable.pins));
-		// BigMarkerOptions = new MarkerOptions()
-		// .position(polivalentaEntry)
-		// .title("Retake")
-		// .snippet("We are ready to take over the world!")
-		// .icon(BitmapDescriptorFactory
-		// .fromResource(R.drawable.dreamhackopen));
-
-		mMap.addMarker(EntryMarker);
-		mMap.addMarker(RetakeMarker);
-		// if (position.zoom <= 17f && BigMarker == null) {
-		// BigMarker = mMap.addMarker(BigMarkerOptions);
-		// } else {
-		// if (BigMarker != null)
-		// BigMarker.remove();
-		// }
 	}
 
 	private void setUpMap() {
-
+/*
 		mMap.setOnCameraChangeListener(new OnCameraChangeListener() {
 
 			@Override
@@ -125,6 +127,7 @@ public class FragmentMap extends BaseFragment implements
 			}
 
 		});
+		*/
 
 		mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 		mMap.getUiSettings().setMapToolbarEnabled(false);
@@ -145,7 +148,7 @@ public class FragmentMap extends BaseFragment implements
 		mMap.moveCamera(upd);
 		// setUpMarkers();
 		mMap.setMyLocationEnabled(true);
-		mMap.setPadding(0, 0, 0, 10);
+		setUpClusterer();
 	}
 
 	@Override

@@ -8,16 +8,16 @@ package com.onyxbeacon;
 
 public final class R {
 	public static final class drawable {
-		public static final int ic_launcher = 0x7f02002c;
+		public static final int ic_launcher = 0x7f02002e;
 	}
 	public static final class string {
-		public static final int app_name = 0x7f060000;
-		public static final int onyx_service_notification_description = 0x7f060003;
-		public static final int onyx_service_notification_title = 0x7f060002;
-		public static final int service_name = 0x7f060001;
+		public static final int app_name = 0x7f080000;
+		public static final int onyx_service_notification_description = 0x7f080003;
+		public static final int onyx_service_notification_title = 0x7f080002;
+		public static final int service_name = 0x7f080001;
 	}
 	public static final class style {
-		public static final int AppBaseTheme = 0x7f070000;
-		public static final int AppTheme = 0x7f070001;
+		public static final int AppBaseTheme = 0x7f070003;
+		public static final int AppTheme = 0x7f070004;
 	}
 }
