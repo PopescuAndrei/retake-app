@@ -70,6 +70,7 @@ public class ScheduleFragment extends BaseFragment {
 				JSONArray day3 = orar.getJSONArray("day3");
 
 				scheduleList = new ArrayList<ScheduleModel>();
+				scheduleList.add(new ScheduleModel("Friday"));
 				for (int i = 0; i < day1.length(); i++) {
 					JSONObject obj = day1.getJSONObject(i);
 					scheduleList.add(new ScheduleModel("Day 1", obj
@@ -78,12 +79,14 @@ public class ScheduleFragment extends BaseFragment {
 					Log.w("NU MERGE IN MM", scheduleList.get(i).toString()
 							+ " ");
 				}
+				scheduleList.add(new ScheduleModel("Saturday"));
 				for (int i = 0; i < day2.length(); i++) {
 					JSONObject obj = day2.getJSONObject(i);
 					scheduleList.add(new ScheduleModel("Day 1", obj
 							.getString("start"), obj.getString("end"), obj
 							.getString("name"), obj.getString("desc")));
 				}
+				scheduleList.add(new ScheduleModel("Sunday"));
 				for (int i = 0; i < day3.length(); i++) {
 					JSONObject obj = day3.getJSONObject(i);
 					scheduleList.add(new ScheduleModel("Day 1", obj
