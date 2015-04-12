@@ -1,0 +1,73 @@
+{
+   "seq":0,
+   "bracket":{
+      "round1":[
+         {
+            "teamname":"Fnatic",
+            "status":"winner"
+         },
+         {
+            "teamname":"Alta Echipa",
+            "status":"loser"
+         },
+         {
+            "teamname":"Fnatic",
+            "status":"winner"
+         },
+         {
+            "teamname":"Alta Echipa",
+            "status":"loser"
+         },
+         {
+            "teamname":"Fnatic",
+            "status":"winner"
+         },
+         {
+            "teamname":"Alta Echipa",
+            "status":"loser"
+         },
+         {
+            "teamname":"Fnatic",
+            "status":"winner"
+         },
+         {
+            "teamname":"Alta Echipa",
+            "status":"loser"
+         }
+      ],
+      "round2":[
+         {
+            "teamname":"Fnatic",
+            "status":"notstarted"
+         },
+         {
+            "teamname":"Fnatic 2",
+            "status":"notstarted"
+         },
+         {
+            "teamname":"Fnatic",
+            "status":"notstarted"
+         },
+         {
+            "teamname":"Fnatic 2",
+            "status":"notstarted"
+         }
+      ],
+      "round3":[
+         {
+            "teamname":"Fnatic3",
+            "status":"notstarted"
+         },
+         {
+            "teamname":"Fnatic 4",
+            "status":"notstarted"
+         }
+      ],
+      "winner":[
+         {
+            "teamname":"FnaticFTW",
+            "status":"notstarted"
+         }
+      ]
+   }
+   }

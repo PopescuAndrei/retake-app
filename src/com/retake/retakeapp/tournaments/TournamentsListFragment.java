@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import com.example.retakeapp.R;
 import com.retake.retakeapp.base.BaseFragment;
 import com.retake.retakeapp.base.BaseModel;
+import com.retake.retakeapp.main.MainActivity;
 
 public class TournamentsListFragment extends BaseFragment {
 	private ListView lvTournamentList;
@@ -72,6 +75,17 @@ public class TournamentsListFragment extends BaseFragment {
 		adapter = new TournamentsAdapter(getActivity().getApplicationContext(),
 				tournamentsList);
 		lvTournamentList.setAdapter(adapter);
+		lvTournamentList.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				((MainActivity) getActivity())
+						.launchTournamentBracket(tournamentsList.get(position)
+								.getName());
+
+			}
+		});
 	}
 
 	@Override

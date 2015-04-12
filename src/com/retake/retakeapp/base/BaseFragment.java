@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.MotionEvent;
@@ -15,10 +18,12 @@ import com.example.retakeapp.R;
 public abstract class BaseFragment extends Fragment implements BaseApiListener {
 
 	protected String SCREEN_TITLE = "base";
+	private Context context;
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
+		this.context = getActivity();
 	}
 
 	private List<BaseApiInterface> apiInterfaces = new ArrayList<BaseApiInterface>();
@@ -102,4 +107,6 @@ public abstract class BaseFragment extends Fragment implements BaseApiListener {
 	public abstract void initUI(View view);
 
 	protected abstract void onAfterStart();
+
+	
 }

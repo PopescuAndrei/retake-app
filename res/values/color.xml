@@ -11,5 +11,7 @@
     <color name="retakeCyan">#32BDA7</color>
     <color name="actionbar_background">#0F4051</color>
     <color name="white">#fff</color>
-
+    <color name="notstarted">#3F778E</color>
+	<color name="winner">#EAF1DD</color>
+	<color name="loser">#FDE9D9</color>
 </resources>

@@ -77,6 +77,9 @@ public class ApiSchedule extends BaseApiInterface {
 								.getString("start"), obj.getString("end"), obj
 								.getString("name"), obj.getString("desc")));
 					}
+					for (ScheduleModel sm : scheduleList) {
+						Log.w("sdfasfsafSA", sm.toString());
+					}
 					onGetSchedule(scheduleList, "", 1);
 				} else {
 					onGetSchedule(null, "no update", 0);
@@ -104,8 +107,8 @@ public class ApiSchedule extends BaseApiInterface {
 				apiListener.onResponse(mod);
 			}
 		} else {
-			ModelOfflineData mod = new ModelOfflineData();
-			apiListener.onResponse(mod);
+//			ModelOfflineData mod = new ModelOfflineData();
+//			apiListener.onResponse(mod);
 			Log.i("api null", "yes");
 		}
 	}

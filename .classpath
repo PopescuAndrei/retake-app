@@ -7,5 +7,6 @@
 	<classpathentry exported="true" kind="lib" path="/OnyxBeaconLibrary-2.1.2"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="lib" path="mylibs/MapsLibrary"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

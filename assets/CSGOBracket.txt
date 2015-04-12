@@ -1,0 +1,71 @@
+{
+   "seq":0,
+   "bracket":{
+      "round1":[
+         {
+            "name":"Fnatic",
+            "status":"winner"
+         },
+         {
+            "name":"Offline",
+            "status":"loser"
+         },
+         {
+            "name":"Fnatic",
+            "status":"winner"
+         },
+         {
+            "name":"Alta Echipa",
+            "status":"loser"
+         },
+         {
+            "name":"Fnatic",
+            "status":"loser"
+         },
+         {
+            "name":"Alta Echipa",
+            "status":"winner"
+         },
+         {
+            "name":"Fnatic",
+            "status":"winner"
+         },
+         {
+            "name":"Alta Echipa",
+            "status":"loser"
+         }
+      ],
+      "round2":[
+         {
+            "name":"Fnatic",
+            "status":"notstarted"
+         },
+         {
+            "name":"Fnatic 2",
+            "status":"notstarted"
+         },
+         {
+            "name":"Fnatic",
+            "status":"notstarted"
+         },
+         {
+            "name":"Fnatic 2",
+            "status":"notstarted"
+         }
+      ],
+      "round3":[
+         {
+            "name":"Fnatic3",
+            "status":"notstarted"
+         },
+         {
+            "name":"Fnatic 4",
+            "status":"notstarted"
+         }
+      ]
+      },
+      "winner":{
+            "name":"FnaticFTW",
+            "status":"notstarted"
+         }
+   }

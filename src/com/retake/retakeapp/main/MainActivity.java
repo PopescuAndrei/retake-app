@@ -12,7 +12,6 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,7 +24,6 @@ import android.widget.Toast;
 import com.example.retakeapp.R;
 import com.onyxbeacon.OnyxBeaconApplication;
 import com.onyxbeacon.OnyxBeaconManager;
-import com.retake.retakeapp.base.BaseFragment;
 import com.retake.retakeapp.beacon.fragments.BeaconFragment;
 import com.retake.retakeapp.beacon.fragments.CouponFragment;
 import com.retake.retakeapp.beacon.logging.LogDialogFragment;
@@ -66,6 +64,7 @@ public class MainActivity extends FragmentActivity implements
 	private HomeFragment fragmentHome;
 	private BeaconFragment fragmentBeacon;
 	private CouponFragment fragmentCoupon;
+	private TournamentsFragment tournamentFragment;
 
 	public static final String LOGGER_KEY = "LoggerKey";
 	private MyLogger mLogger;
@@ -511,6 +510,33 @@ public class MainActivity extends FragmentActivity implements
 				transaction.add(R.id.frame_container, fragmentCoupon);
 			} else {
 				transaction.show(fragmentCoupon);
+			}
+
+			transaction.addToBackStack(null);
+			transaction.commit();
+
+		}
+	}
+
+	public void launchTournamentBracket(String tournament) {
+		tournamentFragment = new TournamentsFragment(tournament);
+		tournamentFragment.setTournament(tournament);
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		android.support.v4.app.Fragment currentFrag = getSupportFragmentManager()
+				.findFragmentById(R.id.frame_container);
+		mDrawerLayout.closeDrawer(mDrawerList);
+		if (currentFrag != tournamentFragment) {
+
+			if (currentFrag != null) {
+				transaction.remove(currentFrag);
+			}
+
+			if (!tournamentFragment.isAdded()) {
+				transaction.add(R.id.frame_container, tournamentFragment);
+			} else {
+				transaction.show(tournamentFragment);
 			}
 
 			transaction.addToBackStack(null);

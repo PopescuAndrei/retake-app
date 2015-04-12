@@ -9,171 +9,80 @@
         android:layout_width="fill_parent"
         android:layout_height="match_parent" >
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal" >
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
             <LinearLayout
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@android:color/darker_gray"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="Round 1" />
-
-                <Button
-                    android:id="@+id/btnFirstTeam"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Echipa 1" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Echipa 2" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Echipa 3" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Echipa 4" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Echipa 5" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Echipa 6" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Echipa 7" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Echipa 8" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@android:color/darker_gray"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="Round 2" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="35dp"
-                    android:layout_marginTop="35dp"
-                    android:text="Echipa 1" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="35dp"
-                    android:layout_marginTop="35dp"
-                    android:text="Echipa 4" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="70dp"
-                    android:layout_marginTop="35dp"
-                    android:text="Echipa 5" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:text="Echipa 8" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@android:color/darker_gray"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="Final" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="180dp"
-                    android:layout_marginTop="100dp"
-                    android:text="Echipa 4" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:text="Echipa 5" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@android:color/darker_gray"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="Winner" />
+                android:orientation="horizontal" >
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:id="@+id/linearRound1"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="vertical" >
 
-                    <Button
-                        android:layout_width="100dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="200dp"
-                        android:text="Echipa 5" />
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:background="@android:color/darker_gray"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="Round 1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearRound2"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:background="@android:color/darker_gray"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="Round 2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearRound3"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:background="@android:color/darker_gray"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="Finals" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:background="@android:color/darker_gray"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="Winner" />
+
+                    <LinearLayout
+                        android:id="@+id/linearWinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical" >
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+        </ScrollView>
     </HorizontalScrollView>
 
 </RelativeLayout>

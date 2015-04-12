@@ -1,0 +1,7 @@
+int drawable bubble_mask 0x7f020000
+int drawable bubble_shadow 0x7f020001
+int id text 0x7f040000
+int layout text_bubble 0x7f030000
+int style Bubble_TextAppearance_Dark 0x7f050000
+int style Bubble_TextAppearance_Light 0x7f050001
+int style ClusterIcon_TextAppearance 0x7f050002
