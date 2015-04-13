@@ -85,10 +85,16 @@
         </receiver>
 
         <provider android:authorities="com.onyxbeaconservice.provider" android:enabled="true" android:exported="false" android:name="com.onyxbeaconservice.provider.IBeaconProvider"/>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="Swarm" android:name="com.swarmconnect.SwarmMainActivity" android:screenOrientation="portrait" android:theme="@style/HoloTheme" android:windowSoftInputMode="stateHidden"/>
+        
+        <service android:name="com.swarmconnect.NotificationService" android:process=":swarm"/>
     </application>
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	
+	<!-- Required if using the Swarm Store features. Not required otherwise. -->
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
 </manifest>

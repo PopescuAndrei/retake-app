@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.retakeapp.R;
+import com.swarmconnect.Swarm;
 
 /**
  * Scheleton for creating other activities
@@ -68,19 +69,21 @@ public abstract class BaseFragmentActivity extends
 	protected void onPause() {
 		super.onPause();
 		setApiInterfacesListener(null);
+		Swarm.setInactive(this);
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
 		setApiInterfacesListener(this);
+		Swarm.setActive(this);
 	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
+		Swarm.setActive(this);
 	}
 
 	/**
@@ -141,4 +144,5 @@ public abstract class BaseFragmentActivity extends
 		} else
 			return true;
 	}
+
 }

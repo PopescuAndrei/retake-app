@@ -114,5 +114,4 @@ public class HomeFragment extends BaseFragment {
 		super.onActivityCreated(savedInstanceState);
 
 	}
-
 }

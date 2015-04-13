@@ -3,7 +3,6 @@ package com.retake.retakeapp.base;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -17,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.retakeapp.R;
 import com.retake.retakeapp.utils.PopDialog;
+import com.swarmconnect.SwarmActivity;
 
 /**
  * <b>apiinterface</b> functionality - adding / automatic listening<br/>
@@ -26,7 +26,8 @@ import com.retake.retakeapp.utils.PopDialog;
  * 
  * 
  */
-public abstract class BaseActivity extends Activity implements BaseApiListener {
+public abstract class BaseActivity extends SwarmActivity implements
+		BaseApiListener {
 
 	protected Handler mainHandler = new Handler();
 	private List<BaseApiInterface> apiInterfaces = new ArrayList<BaseApiInterface>();

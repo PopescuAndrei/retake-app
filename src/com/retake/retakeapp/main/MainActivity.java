@@ -2,6 +2,7 @@ package com.retake.retakeapp.main;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Currency;
 
 import android.app.DialogFragment;
 import android.content.Context;
@@ -24,6 +25,7 @@ import android.widget.Toast;
 import com.example.retakeapp.R;
 import com.onyxbeacon.OnyxBeaconApplication;
 import com.onyxbeacon.OnyxBeaconManager;
+import com.retake.retakeapp.achievements.AchievementsFragment;
 import com.retake.retakeapp.beacon.fragments.BeaconFragment;
 import com.retake.retakeapp.beacon.fragments.CouponFragment;
 import com.retake.retakeapp.beacon.logging.LogDialogFragment;
@@ -34,6 +36,11 @@ import com.retake.retakeapp.schedule.ScheduleFragment;
 import com.retake.retakeapp.streaming.StreamingFragment;
 import com.retake.retakeapp.tournaments.TournamentsFragment;
 import com.retake.retakeapp.tournaments.TournamentsListFragment;
+import com.retake.retakeapp.utils.Constants;
+import com.swarmconnect.Swarm;
+import com.swarmconnect.SwarmAchievement;
+import com.swarmconnect.SwarmActiveUser;
+import com.swarmconnect.delegates.SwarmLoginListener;
 
 @SuppressWarnings("deprecation")
 public class MainActivity extends FragmentActivity implements
@@ -75,7 +82,9 @@ public class MainActivity extends FragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
+		Swarm.setActive(this);
+		Swarm.init(this, Constants.APP_ID, Constants.APP_AUTH,
+				mySwarmLoginListener);
 		mTitle = mDrawerTitle = getTitle();
 
 		// load slide menu items
@@ -111,6 +120,8 @@ public class MainActivity extends FragmentActivity implements
 				.getResourceId(5, -1)));
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[6], navMenuIcons
 				.getResourceId(6, -1)));
+		navDrawerItems.add(new NavDrawerItem(navMenuTitles[7], navMenuIcons
+				.getResourceId(7, -1)));
 		// Recycle the typed array
 		navMenuIcons.recycle();
 
@@ -395,34 +406,37 @@ public class MainActivity extends FragmentActivity implements
 	}
 
 	public void launchAchievements(int position) {
-		if (fragmentAchievements == null) {
-			fragmentAchievements = new AchievementsFragment();
-		}
-		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
-
-		android.support.v4.app.Fragment currentFrag = getSupportFragmentManager()
-				.findFragmentById(R.id.frame_container);
-		mDrawerList.setItemChecked(position, true);
-		mDrawerList.setSelection(position);
-		setTitle(navMenuTitles[position]);
-		mDrawerLayout.closeDrawer(mDrawerList);
-		if (currentFrag != fragmentAchievements) {
-
-			if (currentFrag != null) {
-				transaction.remove(currentFrag);
-			}
-
-			if (!fragmentAchievements.isAdded()) {
-				transaction.add(R.id.frame_container, fragmentAchievements);
-			} else {
-				transaction.show(fragmentAchievements);
-			}
-
-			transaction.addToBackStack(null);
-			transaction.commit();
-
-		}
+		// if (fragmentAchievements == null) {
+		// fragmentAchievements = new AchievementsFragment();
+		// }
+		// android.support.v4.app.FragmentTransaction transaction =
+		// getSupportFragmentManager()
+		// .beginTransaction();
+		//
+		// android.support.v4.app.Fragment currentFrag =
+		// getSupportFragmentManager()
+		// .findFragmentById(R.id.frame_container);
+		// mDrawerList.setItemChecked(position, true);
+		// mDrawerList.setSelection(position);
+		// setTitle(navMenuTitles[position]);
+		// mDrawerLayout.closeDrawer(mDrawerList);
+		// if (currentFrag != fragmentAchievements) {
+		//
+		// if (currentFrag != null) {
+		// transaction.remove(currentFrag);
+		// }
+		//
+		// if (!fragmentAchievements.isAdded()) {
+		// transaction.add(R.id.frame_container, fragmentAchievements);
+		// } else {
+		// transaction.show(fragmentAchievements);
+		// }
+		//
+		// transaction.addToBackStack(null);
+		// transaction.commit();
+		//
+		// }
+		Swarm.showAchievements();
 	}
 
 	public void launchTournaments(int position) {
@@ -558,6 +572,7 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	protected void onResume() {
 		super.onResume();
+		Swarm.setActive(this);
 		if (mManager.isBluetoothAvailable()) {
 			// Enable scanner in foreground mode and register receiver
 			mManager.setForegroundMode(true);
@@ -572,6 +587,7 @@ public class MainActivity extends FragmentActivity implements
 		super.onPause();
 		// Set scanner in background mode
 		mManager.setForegroundMode(false);
+		Swarm.setInactive(this);
 	}
 
 	public MyLogger getLogger() {
@@ -587,4 +603,38 @@ public class MainActivity extends FragmentActivity implements
 		} else
 			return true;
 	}
+
+	@Override
+	public void onBackPressed() {
+		android.support.v4.app.Fragment currentFrag = getSupportFragmentManager()
+				.findFragmentById(R.id.frame_container);
+		if (currentFrag instanceof HomeFragment) {
+			getFragmentManager().popBackStackImmediate();
+			finish();
+		} else {
+			super.onBackPressed();
+		}
+	}
+
+	private SwarmLoginListener mySwarmLoginListener = new SwarmLoginListener() {
+
+		// This method is called when the login process has started
+		// (when a login dialog is displayed to the user).
+		public void loginStarted() {
+		}
+
+		// This method is called if the user cancels the login process.
+		public void loginCanceled() {
+		}
+
+		// This method is called when the user has successfully logged in.
+		public void userLoggedIn(SwarmActiveUser user) {
+			SwarmAchievement.unlock(Constants.BELIEVER_ID);
+		}
+
+		// This method is called when the user logs out.
+		public void userLoggedOut() {
+		}
+
+	};
 }

@@ -1,4 +1,4 @@
-package com.retake.retakeapp.main;
+package com.retake.retakeapp.achievements;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

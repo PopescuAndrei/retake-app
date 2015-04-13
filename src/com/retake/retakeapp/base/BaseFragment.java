@@ -6,8 +6,6 @@ import java.util.List;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.MotionEvent;
@@ -108,5 +106,4 @@ public abstract class BaseFragment extends Fragment implements BaseApiListener {
 
 	protected abstract void onAfterStart();
 
-	
 }

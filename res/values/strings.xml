@@ -26,6 +26,7 @@
         <item>Schedule</item>
         <item>Tournaments</item>
         <item>Streaming</item>
+        <item>Logout</item>
     </string-array>
 
     <array name="nav_drawer_icons">
@@ -35,7 +36,8 @@
         <item>@drawable/ic_notif</item>
         <item>@drawable/ic_schedule</item>
         <item>@drawable/ic_tournaments</item>
-        <item>@drawable/ic_streaming</item>
+        <item>@drawable/ic_streaming</item>	
+        <item>@drawable/ic_logout</item>
     </array>
 
     <string-array name="tournaments">
