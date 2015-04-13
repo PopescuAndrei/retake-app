@@ -281,10 +281,10 @@ public class MainActivity extends FragmentActivity implements
 	}
 
 	public void launchSchedule(int position) {
+		getFragmentManager().popBackStackImmediate();
 		if (fragmentSchedule == null) {
 			fragmentSchedule = new ScheduleFragment();
 		}
-
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
 				.beginTransaction();
 
@@ -313,6 +313,7 @@ public class MainActivity extends FragmentActivity implements
 	}
 
 	public void launchMap(int position) {
+		getFragmentManager().popBackStackImmediate();
 		if (fragmentMap == null) {
 			fragmentMap = new FragmentMap();
 		}
@@ -344,6 +345,7 @@ public class MainActivity extends FragmentActivity implements
 	}
 
 	public void launchStreaming(int position) {
+		getFragmentManager().popBackStackImmediate();
 		if (fragmentStreaming == null) {
 			fragmentStreaming = new StreamingFragment();
 		}
@@ -375,6 +377,7 @@ public class MainActivity extends FragmentActivity implements
 	}
 
 	public void launchNotification(int position) {
+		getFragmentManager().popBackStackImmediate();
 		if (fragmentNotification == null) {
 			fragmentNotification = new NotificationFragment();
 		}
@@ -436,10 +439,12 @@ public class MainActivity extends FragmentActivity implements
 		// transaction.commit();
 		//
 		// }
+		getFragmentManager().popBackStackImmediate();
 		Swarm.showAchievements();
 	}
 
 	public void launchTournaments(int position) {
+		getFragmentManager().popBackStackImmediate();
 		if (fragmentTournaments == null) {
 			fragmentTournaments = new TournamentsListFragment();
 		}
@@ -471,6 +476,7 @@ public class MainActivity extends FragmentActivity implements
 	}
 
 	public void launchHome(int position) {
+		getFragmentManager().popBackStackImmediate();
 		if (fragmentHome == null) {
 			fragmentHome = new HomeFragment();
 		}
@@ -502,6 +508,7 @@ public class MainActivity extends FragmentActivity implements
 	}
 
 	public void launchCoupons(int position) {
+		getFragmentManager().popBackStackImmediate();
 		if (fragmentCoupon == null) {
 			fragmentCoupon = new CouponFragment();
 		}
@@ -533,6 +540,7 @@ public class MainActivity extends FragmentActivity implements
 	}
 
 	public void launchTournamentBracket(String tournament) {
+		getFragmentManager().popBackStackImmediate();
 		tournamentFragment = new TournamentsFragment(tournament);
 		tournamentFragment.setTournament(tournament);
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
