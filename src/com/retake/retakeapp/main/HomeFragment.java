@@ -16,7 +16,7 @@ public class HomeFragment extends BaseFragment {
 	private ImageButton btnMap, btnAchievements, btnTournaments,
 			btnNotifications, btnStreaming, btnSchedule;
 
-	public HomeFragment() {
+	public HomeFragment() {  
 	}
 
 	public static HomeFragment newInstance() {
